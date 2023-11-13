@@ -31,6 +31,11 @@ const Slider = function () {
         sliderImages.forEach((s, i) => s.style.transform = `translateX(${100 * (i - curSlide)}%)`);
     };
     
+    const autoSlider = () => {
+        interval = setInterval(nextSlide, 5000);
+    };
+    autoSlider();
+
     btnArrowRight.addEventListener('click', function(){
         clearInterval(interval);
         nextSlide();
@@ -42,12 +47,6 @@ const Slider = function () {
         autoSlider();
     });
     
-    const autoSlider = () => {
-        interval = setInterval(nextSlide, 5000);
-    };
-    
-    autoSlider();
-
     return (
         <div className="slider--container">
             <button className="button--arrow button--arrow-left">
