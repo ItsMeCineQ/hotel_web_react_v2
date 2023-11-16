@@ -1,67 +1,74 @@
-import React from "react"
-import arrow_img from "../img/icon_arrow.png"
+import React, { useState, useEffect } from "react";
+import arrow_img from "../img/icon_arrow.png";
 import slider_hotel1 from "../img/slider_hotel.jpg";
 import slider_hotel2 from "../img/slider_hotel2.jpg";
 import slider_hotel3 from "../img/slider_hotel3.jpg";
 import slider_hotel4 from "../img/slider_hotel4.jpg";
 import slider_hotel5 from "../img/slider_hotel5.jpeg";
 
-const Slider = function () {
-    const sliderImages = document.querySelectorAll('.slider--image');
-    
-    const btnArrowRight = document.querySelector('.button--arrow-right');
-    const btnArrowLeft = document.querySelector('.button--arrow-left');
-
-    let curSlide = 0;
-    let interval;
-
-    sliderImages.forEach((s, i) => {
-        s.style.transform = `translateX(${100 * i}%)`;
-    });
-    
-    const nextSlide = function(){
-        if(curSlide === sliderImages.length - 1) curSlide = -1;
-        curSlide++;
-        sliderImages.forEach((s, i) => s.style.transform = `translateX(${100 * (i - curSlide)}%)`);
+const Slider = () => {
+    const [curSlide, setCurSlide] = useState(0);
+    const [intervalId, setIntervalId] = useState(null);
+  
+    const sliderImages = [
+      slider_hotel1,
+      slider_hotel2,
+      slider_hotel3,
+      slider_hotel4,
+      slider_hotel5,
+    ];
+  
+    useEffect(() => {
+      const autoSlider = () => {
+        const id = setInterval(() => {
+          setCurSlide((prevSlide) =>
+            prevSlide === sliderImages.length - 1 ? 0 : prevSlide + 1
+          );
+        }, 5000);
+        setIntervalId(id);
+      };
+  
+      autoSlider();
+  
+      return () => {
+        clearInterval(intervalId);
+      };
+    }, [intervalId, sliderImages.length]);
+  
+    const nextSlide = () => {
+      setCurSlide((prevSlide) =>
+        prevSlide === sliderImages.length - 1 ? 0 : prevSlide + 1
+      );
+      clearInterval(intervalId);
+      autoSlider();
     };
-    
-    const previousSlide = function(){
-        if(curSlide === 0) curSlide = sliderImages.length;
-        curSlide--;
-        sliderImages.forEach((s, i) => s.style.transform = `translateX(${100 * (i - curSlide)}%)`);
+  
+    const previousSlide = () => {
+      setCurSlide((prevSlide) =>
+        prevSlide === 0 ? sliderImages.length - 1 : prevSlide - 1
+      );
+      clearInterval(intervalId);
+      autoSlider();
     };
-    
-    const autoSlider = () => {
-        interval = setInterval(nextSlide, 5000);
-    };
-    autoSlider();
-
-    btnArrowRight.addEventListener('click', function(){
-        clearInterval(interval);
-        nextSlide();
-        autoSlider();
-    });
-    btnArrowLeft.addEventListener('click', function(){
-        clearInterval(interval);
-        previousSlide();
-        autoSlider();
-    });
-    
+  
     return (
-        <div className="slider--container">
-            <button className="button--arrow button--arrow-left">
-                <img src={arrow_img} alt="" />
-            </button>
-            <img src={slider_hotel1} alt="" className="slider--image" />
-            <img src={slider_hotel2} alt="" className="slider--image" />
-            <img src={slider_hotel3} alt="" className="slider--image" />
-            <img src={slider_hotel4} alt="" className="slider--image" />
-            <img src={slider_hotel5} alt="" className="slider--image" />
-            <button className="button--arrow button--arrow-right">
-                <img src={arrow_img} alt="" />
-            </button>
-        </div>
-    )
-};
+      <div className="slider--container">
+        <button className="button--arrow button--arrow-left" onClick={previousSlide}>
+          <img src={arrow_img} alt="" />
+        </button>
+        {sliderImages.map((image, i) => (
+          <img
+            key={i}
+            src={image}
+            alt=""
+            className={`slider--image ${i === curSlide ? "active" : ""}`}
+          />
+        ))}
+        <button className="button--arrow button--arrow-right" onClick={nextSlide}>
+          <img src={arrow_img} alt="" />
+        </button>
+      </div>
+    );
+  };
 
-export default Slider;
+  export default Slider;
