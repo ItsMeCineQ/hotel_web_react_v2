@@ -6,7 +6,7 @@ const Header = function () {
             <div className="nav--menu">
                 <h1 className="header--logo">Hotel.ly</h1>
                 <div className="header--menu">
-                    <ul class="nav--links">
+                    <ul className="nav--links">
                         <li><a className="nav--link" href="#home">Home</a></li>
                         <li><a className="nav--link" href="#book">Book</a></li>
                         <li><a className="nav--link" href="#offers">Offers</a></li>
