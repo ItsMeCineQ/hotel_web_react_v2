@@ -36,15 +36,11 @@ const Slider = () => {
     );
   };
 
-  // Start autoSlider with setInterval
   useEffect(() => {
     const intervalId = setInterval(autoSlider, 5000);
 
-    // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
   }, []);
-
-
 
   return (
     <div className="slider--container">
@@ -60,7 +56,7 @@ const Slider = () => {
           src={image}
           alt=""
           style={{
-            width: "100%", // Adjust this as needed
+            width: "100%",
             transition: "transform 0.5s ease",
             transform: `translateX(${100 * (i - curSlide)}%)`,
           }}
