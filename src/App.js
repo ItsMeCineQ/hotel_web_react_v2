@@ -4,6 +4,7 @@ import Header from './components/header';
 import Slider from './components/slider';
 import Map from './components/map';
 import CheckAvailability from './components/availability';
+import AboutUs from './components/about_us';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Slider />
       <CheckAvailability />
       <Map />
+      <AboutUs />
     </div>
   );
 }

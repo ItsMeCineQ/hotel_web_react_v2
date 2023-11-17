@@ -4,7 +4,7 @@ import icon_search from '../img/icon_search2.png'
 export default function CheckAvailability() {
     return(
         <div className="book--container" id="book">
-            <h2>Book your room now!</h2>
+            <h2>Check room availability now!</h2>
             <div className="form--book">
                 <label for="" className="form--hotel_choose">Choose your hotel:</label>
                 <select name="hotel" className="form--select">

@@ -1,5 +1,5 @@
 import 'leaflet/dist/leaflet.css'
-import '../css/leaflet.css'
+import '../css/map.css'
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import { hotels } from './hotels.js'
 
