@@ -1,0 +1,56 @@
+.book--container{
+    margin: auto;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.form--book{
+    margin: auto;
+    width: 800px;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-logo);
+    color: var(--color-light);
+    position: relative;
+    box-shadow: 0 0 5px var(--color-logo);
+    border: 1px solid black;
+    border-bottom: none;
+    padding: 1rem 0;
+  }
+  
+  .form--book label{
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+  
+  .form--select{
+    height: 30px;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+  
+  .form--date{
+    height: 30px;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+  
+  .form--submit{
+    background-color: transparent;
+    border: none;
+    border-radius: 25px;
+    height: 50px;
+    width: 60px;
+  }
+  
+  .form--submit:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--color-light);
+  }
+  
+  .form--submit img{
+    width: 30px;
+    height: 30px;
+  }
