@@ -1,4 +1,5 @@
 import '../css/availability.css'
+import icon_search from '../img/icon_search2.png'
 
 export default function CheckAvailability() {
     return(
@@ -20,7 +21,7 @@ export default function CheckAvailability() {
                     
                 </div>
                 <button className="form--submit">
-                    <img src="src/img/icon_search2.png" alt="search" />
+                    <img src={icon_search} alt="search" />
                 </button>
             </div>
         </div>

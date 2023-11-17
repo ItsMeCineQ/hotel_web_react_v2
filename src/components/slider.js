@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import '../css/slider.css'
 import arrow_img from "../img/icon_arrow.png";
 import slider_hotel1 from "../img/slider_hotel.jpg";
 import slider_hotel2 from "../img/slider_hotel2.jpg";
