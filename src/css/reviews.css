@@ -1,0 +1,92 @@
+.reviews--container{
+    position: relative;
+    width: 900px;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 0 3px black;
+    gap: 2rem;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+  }
+  
+  .reviews--container span{
+    font-size: 1.5rem;
+    text-align: justify;
+    color: #646363;
+    font-style: italic;
+  }
+  
+  .reviews--container img{
+    width: 80px;
+    margin: 0 2rem;
+  }
+  
+  .reviews--review{
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    position: relative;
+    box-shadow: 0 -3px 3px -3px black;
+  }
+  
+  .reviews--review:first-child{
+    box-shadow: none;
+  }
+  
+  .reviews--expand{
+    height: 700px;
+    overflow-y: scroll;
+    animation-name: expandAnimation;
+  }
+  
+  .reviews--collapse{
+    animation-name: collapseAnimation;
+  }
+  
+  .button--reviews{
+    position: sticky;
+    bottom: 0;
+    left: 400px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-image: linear-gradient(to top, white, transparent);
+    background-color: transparent;
+    z-index: 111;
+  }
+  
+  .icon--arrow.rotate{
+    transform: rotate(-90deg);
+    transition: 0.5s;
+  }
+  
+  .button--reviews:hover{
+    cursor: pointer;
+  }
+  
+  .button--reviews img{
+    transform: rotate(90deg);
+    width: 30px;
+  }
+  
+  .icon--quote-start{
+    align-self: flex-start;
+  }
+  
+  .icon--quote-end{
+    transform: rotate(180deg);
+    align-self: flex-end;
+  }
+  
+  .icon--quote-right{
+    transform: rotate(180deg);
+  }
+  
