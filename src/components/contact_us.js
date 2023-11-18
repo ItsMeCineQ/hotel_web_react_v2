@@ -1,4 +1,4 @@
-import '../css/about_us.css'
+import '../css/contact_us.css'
 
 export default function ContactUs() {
     return(

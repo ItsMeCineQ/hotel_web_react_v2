@@ -6,6 +6,7 @@ import Map from './components/map';
 import CheckAvailability from './components/availability';
 import AboutUs from './components/about_us';
 import ContactUs from './components/contact_us';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Map />
       <AboutUs />
       <ContactUs />
+      <Footer />
     </div>
   );
 }
