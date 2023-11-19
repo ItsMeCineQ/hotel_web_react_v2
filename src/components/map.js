@@ -2,9 +2,16 @@ import 'leaflet/dist/leaflet.css'
 import '../css/map.css'
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import { hotels } from './hotels.js'
+import { Icon } from 'leaflet';
+import icon_marker from '../img/icon_marker.png'
 
 export default function Map() {
-  const hotelObjects = Object.values(hotels)
+  const hotelObjects = Object.values(hotels);
+
+  const iconMarker = new Icon({
+    iconUrl: require('../img/icon_marker.png'),
+    iconSize: [40, 40]
+  });
 
   return(
     <MapContainer className="map--container" center={[50.0611786, 19.9373964]} zoom={15} scrollWheelZoom={false}>
@@ -13,7 +20,7 @@ export default function Map() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {hotelObjects.map((hotel, index) => (
-        <Marker className="map--marker" key={index} position={hotel.address.localization}>
+        <Marker icon={iconMarker} className="map--marker" key={index} position={hotel.address.localization}>
           <Popup>
            <div className="hotel--head">
                     <img src={hotel.image} />
