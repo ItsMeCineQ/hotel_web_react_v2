@@ -17,6 +17,7 @@
     align-items: center;
     gap: 2rem;
     margin: 2rem 0;
+    width: 100%;
   }
   
   .about_us--content img{
