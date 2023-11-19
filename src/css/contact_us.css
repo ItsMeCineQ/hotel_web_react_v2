@@ -1,12 +1,10 @@
 .contact--container{
-    margin: auto;
     width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 2rem;
-    margin: 5rem 0;
     gap: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 4px black;
