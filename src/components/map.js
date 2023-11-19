@@ -1,9 +1,8 @@
 import 'leaflet/dist/leaflet.css'
 import '../css/map.css'
-import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { hotels } from './hotels.js'
 import { Icon } from 'leaflet';
-import icon_marker from '../img/icon_marker.png'
 
 export default function Map() {
   const hotelObjects = Object.values(hotels);
@@ -12,6 +11,12 @@ export default function Map() {
     iconUrl: require('../img/icon_marker.png'),
     iconSize: [40, 40]
   });
+
+  const calcAveragePrice = function(hotel){
+    const prices = Object.values(hotel.price);
+    const averagePrices = Math.floor(prices.reduce((acc, price) => acc + price, 0) / prices.length);
+    return averagePrices;
+  };
 
   return(
     <MapContainer className="map--container" center={[50.0611786, 19.9373964]} zoom={15} scrollWheelZoom={false}>
@@ -23,7 +28,7 @@ export default function Map() {
         <Marker icon={iconMarker} className="map--marker" key={index} position={hotel.address.localization}>
           <Popup>
            <div className="hotel--head">
-                    <img src={hotel.image} />
+                    <img src={hotel.image} alt={hotel.name} />
                     <span>{hotel.name}</span>
                 </div>
                 <div className="hotel--details">
@@ -31,7 +36,7 @@ export default function Map() {
                         <span>{hotel.address.city}, {hotel.address.street} {hotel.address.number}</span>
                     </div>
                     <div className="hotel--price">
-                        <span>Average Price:  zł</span>
+                        <span>Average Price:  {calcAveragePrice(hotel)} zł</span>
                     </div>
                     <div className="hotel--review">
                         {hotel.review}/5⭐
