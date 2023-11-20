@@ -1,5 +1,6 @@
 import 'leaflet/dist/leaflet.css'
 import '../css/map.css'
+import { useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { hotels } from './hotels.js'
 import { Icon } from 'leaflet';
@@ -17,6 +18,11 @@ export default function Map() {
     const averagePrices = Math.floor(prices.reduce((acc, price) => acc + price, 0) / prices.length);
     return averagePrices;
   };
+
+  useEffect(() => {
+    const mapContainer = document.querySelector('.map--container');
+    mapContainer.classList.add('map--container-visible');
+  }, []);
 
   return(
     <MapContainer className="map--container" center={[50.0611786, 19.9373964]} zoom={15} scrollWheelZoom={false}>
