@@ -1,6 +1,25 @@
 import '../css/header.css'
+import { useEffect } from 'react'
 
 const Header = function () {
+
+    useEffect(() => {
+        const handleNavLinkClick = (e) => {
+          e.preventDefault();
+          if (e.target.classList.contains('nav--link')) {
+            const id = e.target.getAttribute('href');
+            document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+          }
+        };
+    
+        const navLinks = document.querySelectorAll('.nav--link');
+        navLinks.forEach(link => link.addEventListener('click', handleNavLinkClick));
+    
+        return () => {
+          navLinks.forEach(link => link.removeEventListener('click', handleNavLinkClick));
+        };
+      }, []);
+
     return (
         <header className="header" id="home">
             <div className="nav--menu">
