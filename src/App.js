@@ -7,6 +7,7 @@ import CheckAvailability from './components/availability';
 import AboutUs from './components/about_us';
 import ContactUs from './components/contact_us';
 import Footer from './components/footer';
+import Reviews from './components/reviews';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <CheckAvailability />
         <Map />
         <AboutUs />
+        <Reviews />
         <ContactUs />
       </div>
       <Footer />
