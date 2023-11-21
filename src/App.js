@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/header';
 import Slider from './components/slider';
@@ -10,6 +10,28 @@ import Footer from './components/footer';
 
 
 function App() {
+
+  useEffect(() => {
+
+    const allSections = document.querySelectorAll('.section');
+
+    const revealSection = function(entries, observer){
+        const [entry] = entries;
+        if(!entry.isIntersecting) return;
+        entry.target.classList.remove('section--hidden');
+    };
+
+    const sectionObserver = new IntersectionObserver(revealSection,{
+        root: null,
+        threshold: 0.15,
+    });
+
+    allSections.forEach(function(section){
+        sectionObserver.observe(section);
+        section.classList.add('section--hidden');
+    });
+  }, []);
+
   return (
     <div className="App">
       <Header />
