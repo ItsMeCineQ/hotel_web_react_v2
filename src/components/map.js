@@ -1,6 +1,5 @@
 import 'leaflet/dist/leaflet.css'
 import '../css/map.css'
-import '../App.css'
 import { useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { hotels } from './hotels.js'
@@ -26,7 +25,7 @@ export default function Map() {
   }, []);
 
   return(
-    <MapContainer className="map" center={[50.0611786, 19.9373964]} zoom={15} scrollWheelZoom={false}>
+    <MapContainer className="map--container" center={[50.0611786, 19.9373964]} zoom={15} scrollWheelZoom={false}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

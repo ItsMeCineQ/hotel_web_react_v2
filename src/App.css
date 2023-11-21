@@ -24,15 +24,7 @@
   align-items: center;
 }
 
-/* .map--container{
-  transform: translateY(100%);
-  opacity: 0;
-}
-.map--container-visible {
-  transform: translateY(0);
-  opacity: 1;
-}
- */
+
 .book--container{
   margin-top: 5rem;
 }

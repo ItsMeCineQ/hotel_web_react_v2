@@ -1,7 +1,14 @@
 import '../css/availability.css'
 import icon_search from '../img/icon_search2.png'
+import { useEffect } from 'react'
 
 export default function CheckAvailability() {
+
+    useEffect(() => {
+        const bookContainer = document.querySelector('.book--container');
+        bookContainer.classList.add('book--container-visible');
+    }, []);
+
     return(
         <div className="book--container" id="book">
             <h2>Check room availability now!</h2>

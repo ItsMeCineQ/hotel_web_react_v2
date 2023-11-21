@@ -1,4 +1,4 @@
-.map{
+.map--container{
     height: 600px;
     width: 800px;
     margin: auto;
@@ -8,8 +8,16 @@
     z-index: 1;
     position: relative;
     overflow: hidden;
+    transform: translateY(26%);
+    transition: 0.7s ease-out;
+    opacity: 0;
   }
 
+  .map--container-visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
 .leaflet-popup .leaflet-popup-content-wrapper{
     background-color: var(--color-dark);
     color: var(--color-light);

@@ -15,10 +15,8 @@ function App() {
       <Header />
       <div className='main--container'>
         <Slider />
-        <div className='map--container'>
-          <CheckAvailability />
-          <Map />
-        </div>
+        <CheckAvailability />
+        <Map />
         <AboutUs />
         <ContactUs />
       </div>

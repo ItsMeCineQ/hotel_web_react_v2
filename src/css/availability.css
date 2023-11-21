@@ -2,6 +2,14 @@
     margin: auto;
     margin-top: 5rem;
     text-align: center;
+    transform: translateY(100%);
+    transition: 0.7s ease-out;
+    opacity: 0;
+}
+
+.book--container-visible{
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .form--book{
