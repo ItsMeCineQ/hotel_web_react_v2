@@ -8,14 +8,17 @@ import AboutUs from './components/about_us';
 import ContactUs from './components/contact_us';
 import Footer from './components/footer';
 
+
 function App() {
   return (
     <div className="App">
       <Header />
       <div className='main--container'>
         <Slider />
-        <CheckAvailability />
-        <Map />
+        <div className='map--container'>
+          <CheckAvailability />
+          <Map />
+        </div>
         <AboutUs />
         <ContactUs />
       </div>

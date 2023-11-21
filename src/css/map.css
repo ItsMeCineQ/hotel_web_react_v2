@@ -1,4 +1,4 @@
-.map--container {
+.map{
     height: 600px;
     width: 800px;
     margin: auto;
@@ -8,14 +8,6 @@
     z-index: 1;
     position: relative;
     overflow: hidden;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .map--container-visible {
-    transform: translateY(0);
-    opacity: 100%;
   }
 
 .leaflet-popup .leaflet-popup-content-wrapper{
