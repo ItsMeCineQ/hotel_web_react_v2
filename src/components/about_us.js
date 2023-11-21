@@ -7,8 +7,6 @@ import image5 from '../img/about_us_img-1.jpeg'
 
 export default function AboutUs() {
 
-
-
     return(
         <div className="about_us--container section" id="about_us">
             <div className="about_us--content">

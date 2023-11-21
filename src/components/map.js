@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { hotels } from './hotels.js'
 import { Icon } from 'leaflet';
+import { MAP_URL, MAIN_LOC, MAP_ZOOM } from '../config.js'
 
 export default function Map() {
   const hotelObjects = Object.values(hotels);
@@ -25,10 +26,10 @@ export default function Map() {
   }, []);
 
   return(
-    <MapContainer className="map--container" center={[50.0611786, 19.9373964]} zoom={15} scrollWheelZoom={false}>
+    <MapContainer className="map--container" center={MAIN_LOC} zoom={MAP_ZOOM} scrollWheelZoom={false}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url={MAP_URL}
       />
       {hotelObjects.map((hotel, index) => (
         <Marker icon={iconMarker} className="map--marker" key={index} position={hotel.address.localization}>
