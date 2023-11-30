@@ -8,6 +8,7 @@ import AboutUs from './components/about_us';
 import ContactUs from './components/contact_us';
 import Footer from './components/footer';
 import Reviews from './components/reviews';
+import Calendar from './components/calendar';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
       <div className='main--container'>
         <Slider />
         <CheckAvailability />
+        <Calendar />
         <Map />
         <AboutUs />
         <Reviews />
