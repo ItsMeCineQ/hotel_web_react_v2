@@ -1,0 +1,15 @@
+.react-calendar__navigation__arrow{
+    font-size: 28px;
+}
+
+.react-calendar__navigation__label{
+    font-size: 20px;
+}
+
+.react-calendar__tile--now{
+    background-color: #287eff77
+}
+
+.react-calendar__tile--now:enabled:hover{
+    background-color: #287eff9d
+}
