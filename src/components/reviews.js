@@ -14,7 +14,7 @@ export default function Reviews() {
 
     useEffect(() => {
         if (!isExpanded) {
-          sectionReviewsRef.current.scrollIntoView({ behavior: 'smooth'});
+          sectionReviewsRef.current.scrollTo({top: 0, behavior: 'smooth'});
         }
       }, [isExpanded]);
     

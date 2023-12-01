@@ -1,3 +1,11 @@
+.react-calendar{
+    position: absolute;
+}
+
+.react-calendar-hidden{
+    display: none
+}
+
 .react-calendar__navigation__arrow{
     font-size: 28px;
 }
