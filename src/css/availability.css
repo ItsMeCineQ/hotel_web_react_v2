@@ -14,7 +14,7 @@
 
 .form--book{
     margin: auto;
-    width: 800px;
+    width: 900px;
     margin-top: 3rem;
     display: flex;
     justify-content: center;
@@ -61,4 +61,8 @@
   .form--submit img{
     width: 30px;
     height: 30px;
+  }
+
+  .choose--date{
+    margin-right: 0.5rem;
   }

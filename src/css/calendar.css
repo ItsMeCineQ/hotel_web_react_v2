@@ -1,8 +1,9 @@
 .react-calendar{
     position: absolute;
+    z-index: 222;
 }
 
-.react-calendar-hidden{
+.hidden{
     display: none
 }
 
