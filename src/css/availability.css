@@ -64,5 +64,6 @@
   }
 
   .choose--date{
+    width: 100px;
     margin-right: 0.5rem;
   }

@@ -35,11 +35,11 @@ export default function CheckAvailability() {
                 </select>
                 <label>From: </label>
                 <div className="choose--date date--start" onClick={openCalendar}>
-                    <p>{selectedDate ? selectedDate.toLocaleDateString() : 'Select a date'}</p>
+                    <p>{selectedDate ? selectedDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
                 </div>
                 <label>To: </label>
                 <div className="choose--date date--end">
-                    <p>dd.mm.yyyy</p>
+                    <p>{selectedDate ? selectedDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
                 </div>
                 <CalendarComponent onDateChange={handleDateChange} />
                 <button className="form--submit">
