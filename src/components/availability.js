@@ -1,4 +1,5 @@
 import '../css/availability.css';
+import '../css/calendar.css'
 import icon_search from '../img/icon_search2.png';
 import { useState, useEffect } from 'react';
 import CalendarComponent from './calendar.js';

@@ -40,7 +40,6 @@ function App() {
       <div className='main--container'>
         <Slider />
         <CheckAvailability />
-        <Calendar />
         <Map />
         <AboutUs />
         <Reviews />
