@@ -1,19 +1,25 @@
-import '../css/availability.css'
-import icon_search from '../img/icon_search2.png'
-import { useEffect } from 'react'
+import '../css/availability.css';
+import icon_search from '../img/icon_search2.png';
+import { useState, useEffect } from 'react';
+import CalendarComponent from './calendar.js';
 
 export default function CheckAvailability() {
+
+    const [selectedDate, setSelectedDate] = useState(null);
 
     useEffect(() => {
         const bookContainer = document.querySelector('.book--container');
         bookContainer.classList.add('book--container-visible');
     }, []);
 
-    const openCalendar = function(){
-        console.log('clicked');
+    const handleDateChange = date => {
+        setSelectedDate(date);
+    };
+
+    const openCalendar = () => {
         const calendar = document.querySelector('.react-calendar');
         calendar.classList.toggle('hidden');
-    }
+    };
 
     return(
         <div className="book--container" id="book">
@@ -28,15 +34,13 @@ export default function CheckAvailability() {
                 </select>
                 <label>From: </label>
                 <div className="choose--date date--start" onClick={openCalendar}>
-                    <p>dd.mm.yyyy</p>
+                    <p>{selectedDate ? selectedDate.toLocaleDateString() : 'Select a date'}</p>
                 </div>
                 <label>To: </label>
                 <div className="choose--date date--end">
                     <p>dd.mm.yyyy</p>
                 </div>
-                <div className="calendar">
-                    
-                </div>
+                <CalendarComponent onDateChange={handleDateChange} />
                 <button className="form--submit">
                     <img src={icon_search} alt="search" />
                 </button>
