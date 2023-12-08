@@ -10,7 +10,9 @@ export default function CheckAvailability() {
 
     useEffect(() => {
         const bookContainer = document.querySelector('.book--container');
+        const calendar = document.querySelector('.react-calendar');
         bookContainer.classList.add('book--container-visible');
+        calendar.classList.add('hidden');
     }, []);
 
     const handleDateChange = date => {
@@ -19,7 +21,9 @@ export default function CheckAvailability() {
 
     const openCalendar = () => {
         const calendar = document.querySelector('.react-calendar');
+        const mapContainer = document.querySelector('.map--container');
         calendar.classList.toggle('hidden');
+        mapContainer.classList.toggle('map--under');
     };
 
     return(
@@ -38,7 +42,7 @@ export default function CheckAvailability() {
                     <p>{selectedDate ? selectedDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
                 </div>
                 <label>To: </label>
-                <div className="choose--date date--end">
+                <div className="choose--date date--end" onClick={openCalendar}>
                     <p>{selectedDate ? selectedDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
                 </div>
                 <CalendarComponent onDateChange={handleDateChange} />
