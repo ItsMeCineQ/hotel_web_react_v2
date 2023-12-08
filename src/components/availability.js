@@ -6,7 +6,30 @@ import CalendarComponent from './calendar.js';
 
 export default function CheckAvailability() {
 
-    const [selectedDate, setSelectedDate] = useState(null);
+    const [selectedStartDate, setSelectedStartDate] = useState(null);
+    const [selectedEndDate, setSelectedEndDate] = useState(null);
+  
+    const handleStartDateChange = (date) => {
+      setSelectedStartDate(date);
+    };
+  
+    const handleEndDateChange = (date) => {
+      setSelectedEndDate(date);
+    };
+    
+    const openStartCalendar = () => {
+        const calendar = document.querySelector('.react-calendar');
+        const mapContainer = document.querySelector('.map--container');
+        calendar.classList.toggle('hidden');
+        mapContainer.classList.toggle('map--under');
+    };
+
+    const openEndCalendar = () => {
+        const calendar = document.querySelector('.react-calendar');
+        const mapContainer = document.querySelector('.map--container');
+        calendar.classList.toggle('hidden');
+        mapContainer.classList.toggle('map--under');
+    };
 
     useEffect(() => {
         const bookContainer = document.querySelector('.book--container');
@@ -14,17 +37,6 @@ export default function CheckAvailability() {
         bookContainer.classList.add('book--container-visible');
         calendar.classList.add('hidden');
     }, []);
-
-    const handleDateChange = date => {
-        setSelectedDate(date);
-    };
-
-    const openCalendar = () => {
-        const calendar = document.querySelector('.react-calendar');
-        const mapContainer = document.querySelector('.map--container');
-        calendar.classList.toggle('hidden');
-        mapContainer.classList.toggle('map--under');
-    };
 
     return(
         <div className="book--container" id="book">
@@ -38,14 +50,15 @@ export default function CheckAvailability() {
                     <option value="Station">Main Station Hotel</option>
                 </select>
                 <label>From: </label>
-                <div className="choose--date date--start" onClick={openCalendar}>
-                    <p>{selectedDate ? selectedDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
+                <div className="choose--date date--start" onClick={openStartCalendar}>
+                    <p>{selectedStartDate ? selectedStartDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
                 </div>
                 <label>To: </label>
-                <div className="choose--date date--end" onClick={openCalendar}>
-                    <p>{selectedDate ? selectedDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
+                <div className="choose--date date--end" onClick={openEndCalendar}>
+                    <p>{selectedEndDate ? selectedEndDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
                 </div>
-                <CalendarComponent onDateChange={handleDateChange} />
+                <CalendarComponent onDateChange={handleStartDateChange} className="calendar--start"/>
+                <CalendarComponent onDateChange={handleEndDateChange} className="calendar--end"/>
                 <button className="form--submit">
                     <img src={icon_search} alt="search" />
                 </button>
