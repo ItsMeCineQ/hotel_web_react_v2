@@ -9,33 +9,33 @@ export default function CheckAvailability() {
     const [selectedStartDate, setSelectedStartDate] = useState(null);
     const [selectedEndDate, setSelectedEndDate] = useState(null);
   
-    const handleStartDateChange = (date) => {
-      setSelectedStartDate(date);
-    };
-  
-    const handleEndDateChange = (date) => {
-      setSelectedEndDate(date);
-    };
+    const handleDateChange = (date, isStartDate) => {
+        if (isStartDate) {
+          setSelectedStartDate(date);
+        } else {
+          setSelectedEndDate(date);
+        }
+      };
     
-    const openStartCalendar = () => {
-        const calendar = document.querySelector('.calendar--start');
+      const openCalendar = (calendarClassName) => {
+        const calendar = document.querySelector(`.${calendarClassName}`);
         const mapContainer = document.querySelector('.map--container');
-        calendar.classList.toggle('hidden');
-        mapContainer.classList.toggle('map--under');
-    };
-
-    const openEndCalendar = () => {
-        const calendar = document.querySelector('.calendar--end');
-        const mapContainer = document.querySelector('.map--container');
-        calendar.classList.toggle('hidden');
-        mapContainer.classList.toggle('map--under');
-    };
+      
+        if (calendar && mapContainer) {
+          calendar.classList.toggle('hidden');
+          mapContainer.classList.toggle('map--under');
+        } else {
+          console.error(`Could not find element with class name: ${calendarClassName}`);
+        }
+      };
 
     useEffect(() => {
         const bookContainer = document.querySelector('.book--container');
-        const calendar = document.querySelectorAll('.react-calendar');
+        const calendarStart = document.querySelector('.calendar--start');
+        const calendarEnd = document.querySelector('.calendar--end');
         bookContainer.classList.add('book--container-visible');
-        calendar.forEach(calendar => calendar.classList.add('hidden'));
+        calendarStart.classList.add('hidden');
+        calendarEnd.classList.add('hidden');
     }, []);
 
     return(
@@ -50,15 +50,19 @@ export default function CheckAvailability() {
                     <option value="Station">Main Station Hotel</option>
                 </select>
                 <label>From: </label>
-                <div className="choose--date date--start" onClick={openStartCalendar}>
+                <div className="choose--date date--start" onClick={() => openCalendar('calendar--start')}>
                     <p>{selectedStartDate ? selectedStartDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
                 </div>
                 <label>To: </label>
-                <div className="choose--date date--end" onClick={openEndCalendar}>
+                <div className="choose--date date--end" onClick={() => openCalendar('calendar--end')}>
                     <p>{selectedEndDate ? selectedEndDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
                 </div>
-                <CalendarComponent onDateChange={handleStartDateChange} className="calendar--start"/>
-                <CalendarComponent onDateChange={handleEndDateChange} className="calendar--end"/>
+                <div className='calendar--start'>
+                    <CalendarComponent onDateChange={(date) => handleDateChange(date, true)} />
+                </div>
+                <div className='calendar--end'>
+                    <CalendarComponent onDateChange={(date) => handleDateChange(date, false)} />
+                </div>
                 <button className="form--submit">
                     <img src={icon_search} alt="search" />
                 </button>
