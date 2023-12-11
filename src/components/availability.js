@@ -18,14 +18,14 @@ export default function CheckAvailability() {
     };
     
     const openStartCalendar = () => {
-        const calendar = document.querySelector('.react-calendar');
+        const calendar = document.querySelector('.calendar--start');
         const mapContainer = document.querySelector('.map--container');
         calendar.classList.toggle('hidden');
         mapContainer.classList.toggle('map--under');
     };
 
     const openEndCalendar = () => {
-        const calendar = document.querySelector('.react-calendar');
+        const calendar = document.querySelector('.calendar--end');
         const mapContainer = document.querySelector('.map--container');
         calendar.classList.toggle('hidden');
         mapContainer.classList.toggle('map--under');
@@ -33,9 +33,9 @@ export default function CheckAvailability() {
 
     useEffect(() => {
         const bookContainer = document.querySelector('.book--container');
-        const calendar = document.querySelector('.react-calendar');
+        const calendar = document.querySelectorAll('.react-calendar');
         bookContainer.classList.add('book--container-visible');
-        calendar.classList.add('hidden');
+        calendar.forEach(calendar => calendar.classList.add('hidden'));
     }, []);
 
     return(
