@@ -2,8 +2,19 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     background-color: var(--color-logo);
     color: var(--color-light);
     height: 70px;
     margin-top: 3rem;
+  }
+
+  .footer--logo{
+    position: absolute;
+    left: 20px;
+    font-size: 2rem;
+    user-select: none;
+    color: var(--color-light);
+    border: 2px solid var(--color-light);
+    padding: 0.5rem;
   }
