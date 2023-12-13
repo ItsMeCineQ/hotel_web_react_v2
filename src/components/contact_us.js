@@ -15,6 +15,7 @@ export default function ContactUs() {
                     <option value="Reservation">Events</option>
                 </select>
                 <textarea className="form--contact-message" cols="30" rows="10" placeholder="Your message..."></textarea>
+                <button className='button--submit'>Send</button>
             </div>
         </div>
     )
