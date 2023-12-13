@@ -68,9 +68,63 @@
     cursor: pointer;
   }
 
-  .error-message{
+  .modal--success{
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: auto;
+    text-align: center;
+    background-color: var(--color-light);
+    box-shadow: 0 0 4px black;
+    border-radius: 15px;
+    z-index: 1000;
+  }
+
+  body.modal--open {
+    overflow: hidden;
+  }
+
+  body.modal--open::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    z-index: 222;
+  }
+
+  .button--close-modal{
+    position: absolute;
+    bottom: 10px;
+    width: 30px;
+    height: 20px;
+    background-color: var(--color-light);
+    border: 1px solid var(--color-highlight);
+    border-radius: 10px;
+  }
+
+  .button--close-modal:hover{
+    cursor: pointer;
+    background-color: var(--color-highlight);
+  }
+
+  .message--error{
     color: #ff0000;
     font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
+  }
+
+  .hidden{
+    display: none;
   }

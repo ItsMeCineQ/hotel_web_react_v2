@@ -16,9 +16,21 @@ export default function ContactUs() {
         } else {
             setFormSubmitted(true);
             setError('');
+            setName('');
+            setMail('');
+            setTopic('');
+            setMessage('');
+            
+            document.body.classList.add('modal--open');
         }
     };
 
+    const closeModal = () => {
+        const modal = document.querySelector('.modal--success');
+        modal.classList.add('hidden');
+
+        document.body.classList.remove('modal--open');
+    };
 
     return(
         <div className="contact--container section" id="contact">
@@ -35,8 +47,12 @@ export default function ContactUs() {
                 </select>
                 <textarea className="form--contact-message" cols="30" rows="10" placeholder="Your message..." value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                 <button className='button--submit' onClick={sendQuestion}>Send</button>
-                {error && <p className="error-message">{error}</p>}
-                {formSubmitted && !error && <p className="success-message">Your message was sent successfully!</p>}
+                {error && <p className="message--error">{error}</p>}
+                {formSubmitted && !error && 
+                    <div className="modal--success">
+                        <p>Your message was sent successfully!</p>
+                        <button className='button--close-modal' onClick={closeModal}>OK</button>
+                    </div>}
             </div>
         </div>
     )
