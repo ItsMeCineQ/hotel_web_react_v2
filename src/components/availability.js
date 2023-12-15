@@ -22,20 +22,47 @@ export default function CheckAvailability() {
         const mapContainer = document.querySelector('.map--container');
       
         if (calendar && mapContainer) {
-          calendar.classList.toggle('hidden');
-          mapContainer.classList.toggle('map--under');
+          const isHidden = calendar.classList.contains('hidden');
+      
+          if (isHidden) {
+            calendar.classList.remove('hidden');
+            mapContainer.classList.add('map--under');
+          } else {
+            calendar.classList.add('hidden');
+            mapContainer.classList.remove('map--under');
+          }
         } else {
           console.error(`Could not find element with class name: ${calendarClassName}`);
         }
       };
 
-    useEffect(() => {
+      const closeCalendar = (event) => {
+        const calendarStart = document.querySelector('.calendar--start');
+        const calendarEnd = document.querySelector('.calendar--end');
+        const mapContainer = document.querySelector('.map--container');
+        
+        if (calendarStart && calendarEnd && mapContainer) {
+          calendarStart.classList.add('hidden');
+          calendarEnd.classList.add('hidden');
+          mapContainer.classList.remove('map--under');
+        }
+        if(event.target.classList.contains('choose--date')) event.preventDefault();
+      };
+      
+      useEffect(() => {
         const bookContainer = document.querySelector('.book--container');
         const calendarStart = document.querySelector('.calendar--start');
         const calendarEnd = document.querySelector('.calendar--end');
+        
         bookContainer.classList.add('book--container-visible');
         calendarStart.classList.add('hidden');
         calendarEnd.classList.add('hidden');
+
+        document.addEventListener('click', closeCalendar);
+
+        return () => {
+          document.removeEventListener('click', closeCalendar);
+        };
     }, []);
 
     return(
