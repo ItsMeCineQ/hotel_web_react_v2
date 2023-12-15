@@ -1,3 +1,17 @@
+.reviews--container::-webkit-scrollbar {
+  width: 10px;
+  max-height: 50px;
+}
+
+.reviews--container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.reviews--container::-webkit-scrollbar-thumb {
+  background: var(--color-highlight);
+  border-radius: 10px;
+}
+
 .reviews--container{
     position: relative;
     width: 900px;
@@ -90,4 +104,3 @@
   .icon--quote-right{
     transform: rotate(180deg);
   }
-  
