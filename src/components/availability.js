@@ -31,22 +31,22 @@ export default function CheckAvailability() {
             calendar.classList.add('hidden');
             mapContainer.classList.remove('map--under');
           }
-        } else {
-          console.error(`Could not find element with class name: ${calendarClassName}`);
         }
       };
 
       const closeCalendar = (event) => {
+        
         const calendarStart = document.querySelector('.calendar--start');
         const calendarEnd = document.querySelector('.calendar--end');
         const mapContainer = document.querySelector('.map--container');
         
-        if (calendarStart && calendarEnd && mapContainer) {
-          calendarStart.classList.add('hidden');
-          calendarEnd.classList.add('hidden');
-          mapContainer.classList.remove('map--under');
+        if (event.target.contains(calendarStart) && 
+            event.target.contains(calendarEnd) && 
+            event.target.contains(mapContainer)) {
+              calendarStart.classList.add('hidden');
+              calendarEnd.classList.add('hidden');
+              mapContainer.classList.remove('map--under');
         }
-        if(event.target.classList.contains('choose--date')) event.preventDefault();
       };
       
       useEffect(() => {

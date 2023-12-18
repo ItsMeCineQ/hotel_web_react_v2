@@ -15,6 +15,7 @@
   font-family: courier;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .main--container{
