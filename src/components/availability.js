@@ -39,13 +39,20 @@ export default function CheckAvailability() {
         const calendarStart = document.querySelector('.calendar--start');
         const calendarEnd = document.querySelector('.calendar--end');
         const mapContainer = document.querySelector('.map--container');
-        
-        if (event.target.contains(calendarStart) && 
-            event.target.contains(calendarEnd) && 
-            event.target.contains(mapContainer)) {
-              calendarStart.classList.add('hidden');
-              calendarEnd.classList.add('hidden');
-              mapContainer.classList.remove('map--under');
+        const mainContainer = document.querySelector('.main--container');
+
+        if (
+          calendarStart &&
+          calendarEnd &&
+          mainContainer &&
+          !event.target.closest('.calendar--start') &&
+          !event.target.closest('.calendar--end') &&
+          !event.target.closest('.map--container') &&
+          event.target.closest('.main--container')
+        ) {
+          calendarStart.classList.add('hidden');
+          calendarEnd.classList.add('hidden');
+          mapContainer.classList.remove('map--under');
         }
       };
       
@@ -53,15 +60,16 @@ export default function CheckAvailability() {
         const bookContainer = document.querySelector('.book--container');
         const calendarStart = document.querySelector('.calendar--start');
         const calendarEnd = document.querySelector('.calendar--end');
+        const mainContainer = document.querySelector('.main--container')
         
         bookContainer.classList.add('book--container-visible');
         calendarStart.classList.add('hidden');
         calendarEnd.classList.add('hidden');
 
-        document.addEventListener('click', closeCalendar);
+        mainContainer.addEventListener('click', closeCalendar);
 
         return () => {
-          document.removeEventListener('click', closeCalendar);
+          mainContainer.removeEventListener('click', closeCalendar);
         };
     }, []);
 
