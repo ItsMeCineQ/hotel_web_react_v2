@@ -8,6 +8,7 @@ export default function CheckAvailability() {
 
     const [selectedStartDate, setSelectedStartDate] = useState(null);
     const [selectedEndDate, setSelectedEndDate] = useState(null);
+    const [isToday, setIsToday] = useState(null);
   
     const handleDateChange = (date, isStartDate) => {
         if (isStartDate) {
@@ -60,7 +61,9 @@ export default function CheckAvailability() {
         const bookContainer = document.querySelector('.book--container');
         const calendarStart = document.querySelector('.calendar--start');
         const calendarEnd = document.querySelector('.calendar--end');
-        const mainContainer = document.querySelector('.main--container')
+        const mainContainer = document.querySelector('.main--container');
+        const today = new Date();
+        setIsToday(today);
         
         bookContainer.classList.add('book--container-visible');
         calendarStart.classList.add('hidden');
@@ -86,11 +89,11 @@ export default function CheckAvailability() {
                 </select>
                 <label>From: </label>
                 <div className="choose--date date--start" onClick={() => openCalendar('calendar--start')}>
-                    <p>{selectedStartDate ? selectedStartDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
+                    <p>{selectedStartDate && selectedStartDate >= isToday ? selectedStartDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
                 </div>
                 <label>To: </label>
                 <div className="choose--date date--end" onClick={() => openCalendar('calendar--end')}>
-                    <p>{selectedEndDate ? selectedEndDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
+                    <p>{selectedEndDate > selectedStartDate ? selectedEndDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
                 </div>
                 <div className='calendar--start'>
                     <CalendarComponent onDateChange={(date) => handleDateChange(date, true)} />
