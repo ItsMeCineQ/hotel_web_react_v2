@@ -3,7 +3,6 @@ import hotel2 from '../img/about_us_img-1.jpeg'
 import hotel3 from '../img/about_us_img-2.jpg'
 import hotel4 from '../img/slider_hotel5.jpeg'
 
-const img1 = document.querySelector('.slider--image');
 export const hotels = {
     OldTown : {
         name: 'Old Town Hotel',
@@ -24,7 +23,23 @@ export const hotels = {
             deluxe: 400,
         },
 
-        reviews: [5, 4.5, 5, 4, 5],
+        reviews: {
+            reviews_users: [
+                'John',
+                'Sarah',
+                'Tom',
+                'Betty',
+                'Max'
+            ],
+            reviews_rates: [5, 4.5, 5, 4, 5],
+            reviews_text: [
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?'
+            ],
+        },
         image: hotel,
         availableDates: [],
     },
@@ -49,7 +64,23 @@ export const hotels = {
             superior: 450,
             deluxe: 500,
         },
-        reviews: [4.5, 4, 5, 5, 4.5],
+        reviews: {
+            reviews_users: [
+                'Bartosz',
+                'Maciej',
+                'Karolina',
+                'Anna',
+                'Aleksandra'
+            ],
+            reviews_rates: [5, 4, 4, 4, 4.5],
+            reviews_text: [
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?'
+            ],
+        },
         image: hotel2,
         availableDates: [],
     },
@@ -72,7 +103,23 @@ export const hotels = {
             superior: 400,
             deluxe: 460,
         },
-        reviews: [5, 5, 5, 4, 4.5],
+        reviews: {
+            reviews_users: [
+                'Ted',
+                'Kate',
+                'Marcin',
+                'Kasia',
+                'James'
+            ],
+            reviews_rates: [5, 5, 4, 4, 4.5],
+            reviews_text: [
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?'
+            ],
+        },
         image: hotel3,
         availableDates: [],
     },
@@ -93,7 +140,23 @@ export const hotels = {
             standard: 250,
             premium: 300,
         },
-        reviews: [5, 4, 4, 4.5, 4],
+        reviews: {
+            reviews_users: [
+                'Tony',
+                'Jessica',
+                'Martyna',
+                'Mat',
+                'Grzesiek'
+            ],
+            reviews_rates: [5, 5, 5, 4, 5],
+            reviews_text: [
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?',
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?'
+            ],
+        },
         image: hotel4,
         availableDates: [],
     },
