@@ -2,8 +2,8 @@ import '../css/about_us.css'
 import image1 from '../img/hotel.jpg'
 import image2 from '../img/about_us_img-2.jpg'
 import image3 from '../img/about_us_img-1.jpeg'
-import image4 from '../img/about_us_img-1.jpeg'
-import image5 from '../img/about_us_img-1.jpeg'
+import image4 from '../img/about_us_img-4.jpg'
+import image5 from '../img/about_us_img-5.jpg'
 
 export default function AboutUs() {
 
