@@ -46,7 +46,10 @@ export default function Map() {
                         <span>Average Price:  {calcAveragePrice(hotel)} zł</span>
                     </div>
                     <div className="hotel--review">
-                        {hotel.review}/5⭐
+                    {hotel.reviews && hotel.reviews.length > 0 ?
+                      `${hotel.reviews.reduce((acc, review) => acc += review, 0) / hotel.reviews.length}/5⭐` :
+                      "No reviews"
+                    }
                     </div>
                 </div>
           </Popup>

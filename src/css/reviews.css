@@ -28,7 +28,7 @@
     animation-fill-mode: both;
   }
   
-  .reviews--container span{
+  .reviews--container p{
     font-size: 1.5rem;
     text-align: justify;
     color: #646363;

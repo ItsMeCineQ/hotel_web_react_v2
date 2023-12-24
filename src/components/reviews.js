@@ -23,30 +23,30 @@ export default function Reviews() {
         <div ref={sectionReviewsRef} className={`reviews--container section ${isExpanded ? 'reviews--expand' : 'reviews--collapse'}`} id="reviews">
             <div className="reviews--review first--review">
                 <img src={icon_quote} alt="quote" className="icon--quote-start" />
-                <span>
+                <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?
-                </span>
+                </p>
                 <img src={icon_quote} alt="quote" className="icon--quote-end" />
             </div>
             <div className="reviews--review">
                 <img src={icon_quote} alt="quote" className="icon--quote-start" />
-                <span>
+                <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?
-                </span>
+                </p>
                 <img src={icon_quote} alt="quote" className="icon--quote-end" />
             </div>
             <div className="reviews--review">
                 <img src={icon_quote} alt="quote" className="icon--quote-start" />
-                <span>
+                <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?
-                </span>
+                </p>
                 <img src={icon_quote} alt="quote" className="icon--quote-end" />
             </div>
             <div className="reviews--review">
                 <img src={icon_quote} alt="quote" className="icon--quote-start" />
-                <span>
+                <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?
-                </span>
+                </p>
                 <img src={icon_quote} alt="quote" className="icon--quote-end" />
             </div>
             <button className={`button--reviews ${isExpanded ? 'button--reviews-expand' : ''}`} onClick={toggleReviews}>
