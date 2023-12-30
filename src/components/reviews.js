@@ -2,7 +2,7 @@ import '../css/reviews.css'
 import icon_quote from '../img/icon_quote.png'
 import icon_arrow from '../img/icon_arrow_black.png'
 import { useState, useEffect, useRef } from 'react'
-import hotels from './hotels.js';
+import { hotels } from './hotels.js';
 
 export default function Reviews() {
 
@@ -24,15 +24,20 @@ export default function Reviews() {
     return(
         <div ref={sectionReviewsRef} className={`reviews--container section ${isExpanded ? 'reviews--expand' : 'reviews--collapse'}`} id="reviews">
                 {hotelObjects.map((hotel, index) => {
-                    <div className="reviews--review first--review" key={index}>
+                    return (
+                    <div className="reviews--review" key={index}>
                         <h2>{hotel.name}</h2>
                         <img src={icon_quote} alt="quote" className="icon--quote-start" />
-                        <h2>{}</h2>
+                        <h2>{hotel.reviews.reviews_users[index]}</h2>
                         <p>
-                            hotel.reviews_text;
+                            {hotel.reviews.reviews_text[index]}
+                        </p>
+                        <p>
+                            {hotel.reviews.reviews_rates[index]}
                         </p>
                         <img src={icon_quote} alt="quote" className="icon--quote-end" />
                     </div>
+                    )
                 })}
             {/* <div className="reviews--review">
                 <img src={icon_quote} alt="quote" className="icon--quote-start" />
