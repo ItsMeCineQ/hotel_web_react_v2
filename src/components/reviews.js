@@ -23,22 +23,27 @@ export default function Reviews() {
     
     return(
         <div ref={sectionReviewsRef} className={`reviews--container section ${isExpanded ? 'reviews--expand' : 'reviews--collapse'}`} id="reviews">
-                {hotelObjects.map((hotel, index) => {
-                    return (
-                    <div className="reviews--review" key={index}>
-                        <h2>{hotel.name}</h2>
-                        <img src={icon_quote} alt="quote" className="icon--quote-start" />
-                        <h2>{hotel.reviews.reviews_users[index]}</h2>
-                        <p>
-                            {hotel.reviews.reviews_text[index]}
-                        </p>
-                        <p>
-                            {hotel.reviews.reviews_rates[index]}
-                        </p>
-                        <img src={icon_quote} alt="quote" className="icon--quote-end" />
-                    </div>
-                    )
-                })}
+            {hotelObjects.map((hotel, hotelIndex) => {
+                const reviewElements = [];
+                
+                for (let reviewIndex = 0; reviewIndex < hotel.reviews.reviews_users.length; reviewIndex++) {
+                    const elReview = hotel.reviews.reviews_users[reviewIndex];
+                    const reviewElement = (
+                        <div className="reviews--review" key={reviewIndex}>
+                            <h2>{hotel.name}</h2>
+                            <img src={icon_quote} alt="quote" className="icon--quote-start" />
+                            <div key={reviewIndex}>
+                                <h2>{elReview}</h2>
+                                <p>{hotel.reviews.reviews_text[reviewIndex]}</p>
+                                <p>{hotel.reviews.reviews_rates[reviewIndex]}</p>
+                            </div>
+                            <img src={icon_quote} alt="quote" className="icon--quote-end" />
+                        </div>
+                    );
+                    reviewElements.push(reviewElement);
+                }
+                return reviewElements;
+            })}
             {/* <div className="reviews--review">
                 <img src={icon_quote} alt="quote" className="icon--quote-start" />
                 <p>
