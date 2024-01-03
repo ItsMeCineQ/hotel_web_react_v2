@@ -30,14 +30,18 @@ export default function Reviews() {
                     const elReview = hotel.reviews.reviews_users[reviewIndex];
                     const reviewElement = (
                         <div className="reviews--review" key={reviewIndex}>
-                            <h2>{hotel.name}</h2>
-                            <img src={icon_quote} alt="quote" className="icon--quote-start" />
+                            <h2 className='hotel--name'>{hotel.name}</h2>
                             <div key={reviewIndex}>
-                                <h2>{elReview}</h2>
-                                <p>{hotel.reviews.reviews_text[reviewIndex]}</p>
-                                <p>{hotel.reviews.reviews_rates[reviewIndex]}</p>
+                                <div className='user--review'>
+                                    <h2 className='user--name'>{elReview}</h2>
+                                    <p className='user--reviews_review'>{hotel.reviews.reviews_rates[reviewIndex]}/5{'⭐'}</p>
+                                </div>
+                                <div className='reviews--quotes'>
+                                    <img src={icon_quote} alt="quote" className="icon--quote icon--quote-start" />
+                                    <p className='user--reviews_text'>{hotel.reviews.reviews_text[reviewIndex]}</p>
+                                    <img src={icon_quote} alt="quote" className="icon--quote icon--quote-end" />
+                                </div>
                             </div>
-                            <img src={icon_quote} alt="quote" className="icon--quote-end" />
                         </div>
                     );
                     reviewElements.push(reviewElement);

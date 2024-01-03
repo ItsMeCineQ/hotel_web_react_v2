@@ -18,7 +18,6 @@
     height: 350px;
     overflow: hidden;
     display: flex;
-    align-items: center;
     flex-direction: column;
     margin-bottom: 10rem;
     border-radius: 10px;
@@ -28,27 +27,50 @@
     animation-fill-mode: both;
   }
   
-  .reviews--container p{
-    font-size: 1.5rem;
+  .icon--quote{
+    width: 20px;
+    margin: 0 0.5rem;
+  }
+  
+  .reviews--review{
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    position: relative;
+    box-shadow: 0 -3px 3px -3px black;
+  }
+
+  .hotel--name{
+    margin-bottom: 1rem;
+  }
+  
+  .user--review{
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+
+  .user--name{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .user--reviews_text{
+    font-size: 1.1rem;
     text-align: justify;
     color: #646363;
     font-style: italic;
   }
-  
-  .reviews--container img{
-    width: 80px;
-    margin: 0 2rem;
+
+  .user--reviews_review{
+    font-size: 1.1rem;
   }
-  
-  .reviews--review{
-    min-height: 200px;
+
+  .reviews--quotes{
     display: flex;
-    align-items: center;
-    padding: 15px 0;
-    position: relative;
-    box-shadow: 0 -3px 3px -3px black;
   }
-  
+
   .reviews--review:first-child{
     box-shadow: none;
   }
