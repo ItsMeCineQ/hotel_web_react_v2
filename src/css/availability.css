@@ -72,3 +72,14 @@
     z-index: -1;
     transition: none;
   }
+
+  .choose--date{
+    background-color: var(--color-light);
+    color: var(--color-logo);
+    padding: 5px;
+    user-select: none;
+  }
+
+  .icon--search{
+    width: 25px;
+  }

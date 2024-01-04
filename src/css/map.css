@@ -13,6 +13,15 @@
     opacity: 0;
   }
 
+  .map--container{
+    height: 600px;
+    border: solid 1px black;
+    border-top: none;
+    box-shadow: 0 0 5px var(--color-logo);
+    z-index: 1;
+    position: relative;
+  }
+
   .map--container-visible {
     transform: translateY(0);
     opacity: 1;
