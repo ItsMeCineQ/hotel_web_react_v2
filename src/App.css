@@ -32,6 +32,11 @@
   margin: 10rem;
 }
 
+.mid--container{
+  display: flex;
+  justify-content: space-around;
+}
+
 .sticky{
   position: fixed;
   top: 0;

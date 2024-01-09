@@ -1,5 +1,24 @@
 .hotel_short--container{
     width: 250px;
     height: 800px;
-    background-color: black;
+    background-color: #b16117cc;
+    margin: 6rem 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+.hotel_short--container img{
+    width: 230px;
+    margin-top: 2rem;
+}
+
+.hotel_short--container h3{
+    margin-top: 1rem;
+}
+
+.hotel_short--container p{
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
 }

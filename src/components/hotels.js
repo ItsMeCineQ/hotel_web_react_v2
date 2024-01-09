@@ -12,6 +12,10 @@ export const hotels = {
             number: 21,
             localization: [50.0636644, 19.9367054],
         },
+        contact: {
+            phone: '+48 123 456 789',
+            mail: 'oldtown@hotel.com'
+        },
         rooms: {
             standard: [1, 2, 3, 4],
             premium: [5, 6, 7, 8],
@@ -51,6 +55,10 @@ export const hotels = {
             street: 'Józefa Starego',
             number: 59,
             localization: [50.0569229, 19.9410478],
+        },
+        contact: {
+            phone: '+48 123 456 789',
+            mail: 'cracow@hotel.com'
         },
         rooms: {
             standard: [101, 102, 103],
@@ -93,6 +101,10 @@ export const hotels = {
             number: 33,
             localization: [50.0557622, 19.9333749],
         },
+        contact: {
+            phone: '+48 123 456 789',
+            mail: 'wawel@hotel.com'
+        },
         rooms: {
             premium: [1.1, 1.2, 1.3],
             superior: [2.1, 2.2, 2.3],
@@ -131,6 +143,10 @@ export const hotels = {
             street: 'Lubicz',
             number: 64,
             localization: [50.0647482, 19.9471013],
+        },
+        contact: {
+            phone: '+48 123 456 789',
+            mail: 'station@hotel.com'
         },
         rooms: {
             standard: [1, 2, 3, 4, 5, 6],

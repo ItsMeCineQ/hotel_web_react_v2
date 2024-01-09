@@ -9,7 +9,8 @@ import ContactUs from './components/contact_us';
 import Footer from './components/footer';
 import Reviews from './components/reviews';
 import Calendar from './components/calendar';
-import HotelShort from './components/hotels_shorts_left';
+import HotelShortLeft from './components/hotels_shorts_left';
+import HotelShortRight from './components/hotels_shorts_right';
 
 
 function App() {
@@ -41,9 +42,12 @@ function App() {
       <div className='main--container'>
         <Slider />
         <div className='mid--container'>
-          <HotelShort />
-          <CheckAvailability />
-          <Map />
+          <HotelShortLeft />
+          <div className='map-section'>
+            <CheckAvailability />
+            <Map />
+          </div>
+          <HotelShortRight />
         </div>
         <AboutUs />
         <Reviews />
