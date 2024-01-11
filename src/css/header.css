@@ -2,8 +2,11 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
     border-bottom: solid 2px var(--color-dark);
+    width: 100%;
+    background-color: #ffffffef;
+    position: fixed;
+    z-index: 9999;
   }
   
   .nav--menu{
@@ -11,6 +14,7 @@ header{
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin: 1rem 2rem;
   }
   
   .header--logo{
@@ -57,4 +61,9 @@ header{
   
   .header--menu ul li a:hover::before{
     width: 100%;
+  }
+
+  .sticky{
+    position: fixed;
+
   }
