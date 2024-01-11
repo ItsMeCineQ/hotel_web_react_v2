@@ -1,9 +1,13 @@
 :root{
   --color-dark: #616060;
+  --color-background: #faf9f9;
   --color-light: #f5f5f5;
   --color-highlight: #c9c5c5;
-  --color-header: #b16117;
+  --color-minor: #CF995F;
   --color-logo: #3b3b3b;
+  --color-orange: #F63E02;
+  --color-silver: #BEB0A7;
+  --color-orange2: #F17300;
 }
 
 *{
@@ -17,6 +21,7 @@
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+
 }
 
 .main--container{

@@ -18,14 +18,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #b16117cc;
+    background-color: #f17400dc;
     border: none;
     position: absolute;
   }
   
   .button--arrow:hover{
     cursor: pointer;
-    background-color: var(--color-header);
+    background-color: var(--color-orange2);
   }
   
   .button--arrow-left{
