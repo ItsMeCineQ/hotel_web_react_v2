@@ -41,7 +41,7 @@ function App() {
       <Header />
       <div className='main--container'>
         <Slider />
-        <div className='mid--container'>
+        <div className='mid--container section'>
           <HotelShortLeft />
           <div className='map-section'>
             <CheckAvailability />
