@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import '../css/slider.css'
 import arrow_img from "../img/icon_arrow.png";
-import slider_hotel1 from "../img/slider_hotel.jpg";
-import slider_hotel2 from "../img/slider_hotel2.jpg";
+import slider_hotel1 from "../img/slider_hotel6.jpg";
+import slider_hotel2 from "../img/slider_hotel7.jpg";
 import slider_hotel3 from "../img/slider_hotel3.jpg";
 import slider_hotel4 from "../img/slider_hotel4.jpg";
 import slider_hotel5 from "../img/slider_hotel5.jpeg";
@@ -46,9 +46,7 @@ const Slider = () => {
   return (
     <div className="slider--container">
       <button
-        className="button--arrow button--arrow-left"
-        onClick={previousSlide}
-      >
+        className="button--arrow button--arrow-left" onClick={previousSlide}>
         <img src={arrow_img} alt="" />
       </button>
       {sliderImages.map((image, i) => (

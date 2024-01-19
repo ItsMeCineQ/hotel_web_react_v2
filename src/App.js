@@ -42,15 +42,9 @@ function App() {
       <div className='main--container'>
         <Slider />
         <CheckAvailability />
-        <div className='mid--container section'>
-          <HotelShortLeft />
-          <div className='map-section'>
-            <Map />
-          </div>
-          <HotelShortRight />
-        </div>
         <AboutUs />
         <Reviews />
+        <Map />
         <ContactUs />
       </div>
       <Footer />
