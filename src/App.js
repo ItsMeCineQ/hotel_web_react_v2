@@ -41,10 +41,10 @@ function App() {
       <Header />
       <div className='main--container'>
         <Slider />
+        <CheckAvailability />
         <div className='mid--container section'>
           <HotelShortLeft />
           <div className='map-section'>
-            <CheckAvailability />
             <Map />
           </div>
           <HotelShortRight />

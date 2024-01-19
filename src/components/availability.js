@@ -78,22 +78,18 @@ export default function CheckAvailability() {
 
     return(
         <div className="book--container" id="book">
-            <h2>Check room availability now!</h2>
             <div className="form--book">
-                <label for="" className="form--hotel_choose">Choose your hotel:</label>
                 <select name="hotel" className="form--select">
                     <option value="OldTown">Old Town Hotel</option>
                     <option value="Cracow">Cracow Hotel</option>
                     <option value="Wawel">Wawel Hotel</option>
                     <option value="Station">Main Station Hotel</option>
                 </select>
-                <label>From: </label>
                 <div className="choose--date date--start" onClick={() => openCalendar('calendar--start')}>
-                    <p>{selectedStartDate && selectedStartDate >= isToday ? selectedStartDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
+                    <p>{selectedStartDate && selectedStartDate >= isToday ? selectedStartDate.toLocaleDateString() : 'Start date'}</p>
                 </div>
-                <label>To: </label>
                 <div className="choose--date date--end" onClick={() => openCalendar('calendar--end')}>
-                    <p>{selectedEndDate > selectedStartDate ? selectedEndDate.toLocaleDateString() : 'dd.mm.yyyy'}</p>
+                    <p>{selectedEndDate > selectedStartDate ? selectedEndDate.toLocaleDateString() : 'End date'}</p>
                 </div>
                 <div className='calendar--start'>
                     <CalendarComponent onDateChange={(date) => handleDateChange(date, true)} />
