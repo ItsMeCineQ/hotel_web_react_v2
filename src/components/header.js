@@ -11,6 +11,20 @@ const Header = function () {
             document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
           }
         };
+
+        const header = document.querySelector('.header');
+
+        document.addEventListener('scroll', () => {
+          const scrollPosition = window.scrollY;
+    
+          const threshold = 50;
+    
+          if (scrollPosition > threshold) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        });
     
         const navLinks = document.querySelectorAll('.nav--link');
         navLinks.forEach(link => link.addEventListener('click', handleNavLinkClick));

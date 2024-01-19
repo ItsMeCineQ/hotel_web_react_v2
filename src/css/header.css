@@ -2,9 +2,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: solid 2px var(--color-dark);
     width: 100%;
-    background-color: #fffffff6;
     position: fixed;
     z-index: 9999;
   }
@@ -20,8 +18,8 @@ header{
   .header--logo{
     font-size: 2.5rem;
     user-select: none;
-    color: var(--color-logo);
-    border: 2px solid var(--color-logo);
+    color: white;
+    border: 2px solid white;
     padding: 0.5rem;
   }
   
@@ -34,7 +32,7 @@ header{
   .header--menu ul li{
     list-style-type: none;
     font-size: 1.5rem;
-    color: var(--color-logo)
+    color: white;
   }
   
   .header--menu ul li a:hover{
@@ -43,7 +41,7 @@ header{
   
   .header--menu ul li a{
     text-decoration: none;
-    color: var(--color-logo);
+    color: white;
     position: relative;
     display: inline-block;
   }
@@ -55,7 +53,7 @@ header{
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-logo);
+    background-color: white;
     transition: width 0.25s ease-out;
   }
   
@@ -63,7 +61,7 @@ header{
     width: 100%;
   }
 
-  .sticky{
-    position: fixed;
-
+  .scrolled{
+    background-color: #000000ea;
+    transition: all 0.3s;
   }
