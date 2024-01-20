@@ -55,8 +55,14 @@ const Slider = () => {
           src={image}
           alt=""
           style={{
+            opacity: i === curSlide ? 1 : 0,
+            transition: "opacity 0.5s ease",
+            position: "absolute",
+            top: 0,
             width: "100%",
-            transition: "transform 0.5s ease",
+            height: "100%",
+            zIndex: i === curSlide ? 1 : -1,
+            objectFit: "cover",
             transform: `translateX(${100 * (i - curSlide)}%)`,
           }}
           className={`slider--image ${i === curSlide ? "active" : ""}`}
