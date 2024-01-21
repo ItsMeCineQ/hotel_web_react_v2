@@ -25,6 +25,12 @@ export default function ContactUs() {
         }
     };
 
+    const closeForm = () => {
+        const form = document.querySelector('.contact--container');
+
+        form.classList.add('hidden');
+    }
+
     const closeModal = () => {
         const modal = document.querySelector('.modal--success');
         modal.classList.add('hidden');
@@ -47,6 +53,7 @@ export default function ContactUs() {
                 </select>
                 <textarea className="form--contact-message" cols="30" rows="10" placeholder="Your message..." value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                 <button className='button--submit' onClick={sendQuestion}>Send</button>
+                <button className='button--hide' onClick={closeForm}>Hide</button>
                 {error && <p className="message--error">{error}</p>}
                 {formSubmitted && !error && 
                     <div className="modal--success">
