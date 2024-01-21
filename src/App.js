@@ -44,8 +44,12 @@ function App() {
         <CheckAvailability />
         <AboutUs />
         <Reviews />
-        <Map />
         <ContactUs />
+      </div>
+      <div className='essentials'>
+        <HotelShortLeft />
+        <HotelShortRight />
+        <Map />
       </div>
       <Footer />
     </div>

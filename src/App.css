@@ -58,6 +58,15 @@
   transform: translateY(150px);
 }
 
+.essentials{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  background-color: var(--color-logo);
+}
+
 /* **************ANIMATIONS*************** */
 
 @keyframes expandAnimation{

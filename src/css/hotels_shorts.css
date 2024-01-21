@@ -1,19 +1,18 @@
 .hotel_short--container{
-    width: 250px;
-    height: 800px;
-    background-color: var(--color-highlight);
-    margin: 6rem 10rem;
+    width: 200px;
+    height: 600px;
+    margin: 0 10rem;
     display: flex;
     flex-direction: column;
     justify-content: top;
     align-items: center;
-    border: 1px solid var(--color-logo);
-    box-shadow: 0 0 5px var(--color-logo);
+    color: white;
+    text-align: center;
 }
 
 .hotel_short--container img{
-    width: 230px;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    width: 100px;
 }
 
 .hotel_short--container h2{
@@ -26,5 +25,5 @@
 
 .hotel_short--container p{
     margin: 0.5rem 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
