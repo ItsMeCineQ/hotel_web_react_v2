@@ -12,7 +12,7 @@
 
 .hotel_short--container img{
     margin-top: 3rem;
-    width: 100px;
+    width: 100%;
 }
 
 .hotel_short--container h2{
@@ -26,4 +26,12 @@
 .hotel_short--container p{
     margin: 0.5rem 0;
     font-size: 1rem;
+}
+.contact_form--link{
+    text-decoration: none;
+}
+
+.contact_form--link:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }

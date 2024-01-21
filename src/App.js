@@ -5,13 +5,11 @@ import Slider from './components/slider';
 import Map from './components/map';
 import CheckAvailability from './components/availability';
 import AboutUs from './components/about_us';
-import ContactUs from './components/contact_us';
+import ContactForm from './components/contact_form';
 import Footer from './components/footer';
 import Reviews from './components/reviews';
 import Calendar from './components/calendar';
-import HotelShortLeft from './components/hotels_shorts_left';
-import HotelShortRight from './components/hotels_shorts_right';
-
+import Contact from './components/contact';
 
 function App() {
 
@@ -44,11 +42,10 @@ function App() {
         <CheckAvailability />
         <AboutUs />
         <Reviews />
-        <ContactUs />
       </div>
       <div className='essentials'>
-        <HotelShortLeft />
-        <HotelShortRight />
+        <Contact />
+        <ContactForm />
         <Map />
       </div>
       <Footer />

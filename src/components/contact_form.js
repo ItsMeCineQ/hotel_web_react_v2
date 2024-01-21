@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/contact_us.css'
+import '../css/contact_form.css'
 
 export default function ContactUs() {
 
@@ -33,7 +33,7 @@ export default function ContactUs() {
     };
 
     return(
-        <div className="contact--container section" id="contact">
+        <div className="contact--container hidden" id="contact">
             <span>Contact us with e-mail!</span>
             <div className="form--contact">
                 <input type="text" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)}/>
