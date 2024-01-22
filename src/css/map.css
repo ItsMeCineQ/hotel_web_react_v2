@@ -1,7 +1,7 @@
 .map--container{
     height: 500px;
     width: 600px;
-    margin: auto;
+    margin-left: 5rem;
     border: solid 1px black;
     box-shadow: 0 0 5px var(--color-logo);
     z-index: 1;

@@ -1,0 +1,15 @@
+.other--list{
+    text-align: right;
+    margin-left: 5rem;
+}
+
+.other--list ul{
+    list-style: none;
+    letter-spacing: 0.1rem;
+    color: white;
+    line-height: 2rem;
+}
+
+.other--list a:hover{
+    cursor: pointer;
+}

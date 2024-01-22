@@ -10,6 +10,7 @@ import Footer from './components/footer';
 import Reviews from './components/reviews';
 import Calendar from './components/calendar';
 import Contact from './components/contact';
+import Other from './components/other';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
         <Contact />
         <ContactForm />
         <Map />
+        <Other />
       </div>
       <Footer />
     </div>

@@ -1,7 +1,7 @@
-.hotel_short--container{
+.contact--container{
     width: 200px;
     height: 600px;
-    margin: 0 10rem;
+    margin-left: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: top;
@@ -10,20 +10,20 @@
     text-align: center;
 }
 
-.hotel_short--container img{
+.contact--container img{
     margin-top: 3rem;
     width: 100%;
 }
 
-.hotel_short--container h2{
+.contact--container h2{
     margin-top: 1rem;
 }
 
-.hotel_short--container h3{
+.contact--container h3{
     margin-top: 1rem;
 }
 
-.hotel_short--container p{
+.contact--container p{
     margin: 0.5rem 0;
     font-size: 1rem;
 }

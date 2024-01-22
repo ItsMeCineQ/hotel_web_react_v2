@@ -7,7 +7,7 @@ import slider_hotel3 from "../img/slider_hotel3.jpg";
 import slider_hotel4 from "../img/slider_hotel4.jpg";
 import slider_hotel5 from "../img/slider_hotel5.jpeg";
 
-const Slider = () => {
+export default function Slider() {
   const [curSlide, setCurSlide] = useState(0);
 
   const sliderImages = [
@@ -74,5 +74,3 @@ const Slider = () => {
     </div>
   );
 };
-
-export default Slider;

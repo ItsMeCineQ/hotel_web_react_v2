@@ -26,7 +26,7 @@ export default function ContactUs() {
     };
 
     const closeForm = () => {
-        const form = document.querySelector('.contact--container');
+        const form = document.querySelector('.contact--form');
 
         form.classList.add('hidden');
     }
@@ -39,7 +39,7 @@ export default function ContactUs() {
     };
 
     return(
-        <div className="contact--container hidden" id="contact">
+        <div className="contact--form hidden" id="contact">
             <span>Contact us with e-mail!</span>
             <div className="form--contact">
                 <input type="text" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)}/>
@@ -52,8 +52,10 @@ export default function ContactUs() {
                     <option value="Reservation">Events</option>
                 </select>
                 <textarea className="form--contact-message" cols="30" rows="10" placeholder="Your message..." value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
-                <button className='button--submit' onClick={sendQuestion}>Send</button>
-                <button className='button--hide' onClick={closeForm}>Hide</button>
+                <div className='buttons'>
+                    <button className='button button--hide' onClick={closeForm}>Hide</button>
+                    <button className='button button--submit' onClick={sendQuestion}>Send</button>
+                </div>
                 {error && <p className="message--error">{error}</p>}
                 {formSubmitted && !error && 
                     <div className="modal--success">
