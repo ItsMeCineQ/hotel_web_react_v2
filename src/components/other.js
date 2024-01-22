@@ -8,7 +8,6 @@ export default function Other() {
         newsletter.classList.remove('hidden');
     }
 
-
     return(
         <div className="other--list">
             <ul>

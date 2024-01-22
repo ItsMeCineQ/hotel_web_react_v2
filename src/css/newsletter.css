@@ -7,6 +7,9 @@
     align-items: center;
     flex-direction: column;
     position: relative;
+    bottom: 40%;
+    left: -33%;
+    z-index: 9999;
 }
 
 .newsletter--mail{
@@ -39,6 +42,20 @@
 
 .button_newsletter--close:hover{
     cursor: pointer;
+}
+
+.newsletter--success{
+    width: 150px;
+    height: 100px;
+    background-color: black;
+    color: white;
+    z-index: 10000;
+}
+
+.button_newsletter--success--close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }
 
 .hidden{
