@@ -11,6 +11,7 @@ import Reviews from './components/reviews';
 import Calendar from './components/calendar';
 import Contact from './components/contact';
 import Other from './components/other';
+import Newsletter from './components/newsletter';
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
         <ContactForm />
         <Map />
         <Other />
+        <Newsletter />
       </div>
       <Footer />
     </div>

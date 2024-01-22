@@ -1,0 +1,46 @@
+.newsletter{
+    height: 200px;
+    width: 300px;
+    background-color: #000000e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.newsletter--mail{
+    width: 200px;
+    height: 25px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.button_newsletter--submit{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 16px;
+    left: 40%;
+}
+
+.button_newsletter--submit:hover{
+    cursor: pointer;
+}
+
+.button_newsletter--close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.button_newsletter--close:hover{
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}
