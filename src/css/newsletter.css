@@ -1,23 +1,35 @@
 .newsletter{
-    height: 200px;
     width: 300px;
-    background-color: #000000e5;
+    height: 140px;
+    padding: 15px 20px;
+    background-color: #00000099;
+    box-shadow: 0 2px 9px 0 #00000080;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: relative;
+    position: fixed;
     bottom: 40%;
-    left: -33%;
+    right: 10px;
     z-index: 9999;
+    border-radius: 5px;
+}
+
+.newsletter p{
+    color: white;
+    margin: 2rem 1rem;
 }
 
 .newsletter--mail{
     width: 200px;
     height: 25px;
-    font-size: 1.5rem;
-    border: none;
-    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #ffffff5e;
+    background-color: #0000004f;
+    color: white;
+}
+
+.newsletter--mail:focus{
+    outline: none;
 }
 
 .button_newsletter--submit{
@@ -26,8 +38,12 @@
     color: white;
     font-size: 1.5rem;
     position: absolute;
-    bottom: 16px;
-    left: 40%;
+    bottom: 22px;
+    right: 70px;
+}
+
+.button_newsletter--submit img{
+    width: 26px;
 }
 
 .button_newsletter--submit:hover{
@@ -36,8 +52,14 @@
 
 .button_newsletter--close{
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+}
+
+.button_newsletter--close img{
+    width: 16px;
 }
 
 .button_newsletter--close:hover{
@@ -45,11 +67,21 @@
 }
 
 .newsletter--success{
+    position: relative;
+    top: 50%;
+    left: 50%;
     width: 150px;
     height: 100px;
-    background-color: black;
+    background-color: #0000004f;
     color: white;
     z-index: 10000;
+}
+
+.newsletter--error{
+    height: 20px;
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: -30px;
 }
 
 .button_newsletter--success--close{
