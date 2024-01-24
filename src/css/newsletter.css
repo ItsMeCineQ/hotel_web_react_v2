@@ -12,6 +12,8 @@
     right: 10px;
     z-index: 9999;
     border-radius: 5px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
 }
 
 .newsletter p{
@@ -21,7 +23,7 @@
 
 .newsletter--mail{
     width: 200px;
-    height: 25px;
+    height: 14px;
     padding: 5px;
     border: 1px solid #ffffff5e;
     background-color: #0000004f;
@@ -38,12 +40,12 @@
     color: white;
     font-size: 1.5rem;
     position: absolute;
-    bottom: 22px;
+    bottom: 24px;
     right: 70px;
 }
 
 .button_newsletter--submit img{
-    width: 26px;
+    width: 24px;
 }
 
 .button_newsletter--submit:hover{
@@ -91,5 +93,6 @@
 }
 
 .hidden{
-    display: none;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
 }
