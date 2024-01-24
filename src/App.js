@@ -8,12 +8,11 @@ import AboutUs from './components/about_us';
 import ContactForm from './components/contact_form';
 import Footer from './components/footer';
 import Reviews from './components/reviews';
-import Calendar from './components/calendar';
 import Contact from './components/contact';
 import Other from './components/other';
 import Newsletter from './components/newsletter';
 
-function App() {
+export default function App() {
 
   useEffect(() => {
 
@@ -55,6 +54,4 @@ function App() {
       <Footer />
     </div>
   );
-}
-
-export default App;
+};

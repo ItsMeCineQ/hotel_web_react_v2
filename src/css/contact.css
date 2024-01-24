@@ -1,12 +1,11 @@
 .contact--container{
     width: 200px;
-    height: 600px;
-    margin-left: 10rem;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: top;
     align-items: center;
-    color: white;
+    color: var(--color-light);
     text-align: center;
 }
 

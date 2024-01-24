@@ -3,7 +3,7 @@ footer{
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: var(--color-logo);
+    background-color: var(--color-black);
     color: var(--color-light);
     height: 70px;
   }

@@ -1,9 +1,10 @@
 :root{
   --color-dark: #616060;
+  --color-black: #000000e5;
+  --color-black-transparent: #00000099;
   --color-background: #faf9f9;
   --color-light: #f5f5f5;
   --color-highlight: #c9c5c5;
-  --color-minor: #CF995F;
   --color-logo: #3b3b3b;
   --color-orange: #F63E02;
   --color-silver: #BEB0A7;
@@ -64,8 +65,8 @@
   align-items: center;
   position: relative;
   width: 100%;
-  height: 600px;
-  background-color: var(--color-logo);
+  height: 450px;
+  background-color: #000000e5;
 }
 
 /* **************ANIMATIONS*************** */

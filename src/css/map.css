@@ -1,9 +1,7 @@
 .map--container{
-    height: 500px;
-    width: 600px;
+    height: 400px;
+    width: 500px;
     margin-left: 5rem;
-    border: solid 1px black;
-    box-shadow: 0 0 5px var(--color-logo);
     z-index: 1;
     position: relative;
     overflow: hidden;
@@ -63,4 +61,8 @@
   
 .leaflet-popup .leaflet-popup-tip{
     background-color: var(--color-dark);
+}
+
+.leaflet-container a.leaflet-popup-close-button{
+    color: var(--color-light);
 }

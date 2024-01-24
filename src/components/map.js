@@ -4,7 +4,8 @@ import { useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { hotels } from './hotels.js'
 import { Icon } from 'leaflet';
-import { MAP_URL, MAIN_LOC, MAP_ZOOM } from '../config.js'
+import { MAP_URL, MAIN_LOC, MAP_ZOOM } from '../config.js';
+import icon_close from '../img/icon_close.png'
 
 export default function Map() {
   const hotelObjects = Object.values(hotels);
