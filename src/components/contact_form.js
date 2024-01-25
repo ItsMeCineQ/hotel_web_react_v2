@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import '../css/contact_form.css'
+import '../css/contact_form.css';
+import icon_close from '../img/icon_close.png';
+import icon_mail from '../img/icon_mail.png';
 
 export default function ContactUs() {
 
@@ -52,10 +54,8 @@ export default function ContactUs() {
                     <option value="Reservation">Events</option>
                 </select>
                 <textarea className="form--contact-message" cols="30" rows="10" placeholder="Your message..." value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
-                <div className='buttons'>
-                    <button className='button button--hide' onClick={closeForm}>Hide</button>
-                    <button className='button button--submit' onClick={sendQuestion}>Send</button>
-                </div>
+                <button className='button button--hide' onClick={closeForm}><img src={icon_close}></img></button>
+                <button className='button button--submit' onClick={sendQuestion}><img src={icon_mail}></img></button>
                 {error && <p className="message--error">{error}</p>}
                 {formSubmitted && !error && 
                     <div className="modal--success">

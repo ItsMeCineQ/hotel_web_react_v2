@@ -1,6 +1,6 @@
 .contact--form{
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 10%;
     left: 40%;
     width: 400px;
     display: flex;
@@ -12,7 +12,9 @@
     padding: 2rem;
     gap: 1rem;
     color: white;
-    background-color: #000000e8;
+    background-color: var(--color-black-transparent);
+    box-shadow: 0 2px 9px 0 #00000080;
+    backdrop-filter: blur(5px);
     z-index: 999;
   }
   
@@ -69,14 +71,24 @@
     width: 60px;
     font-size: 1.3rem;
     align-self: center;
-    background-color: var(--color-light);
+    background-color: transparent;
     border-radius: 15px;
-    border: 1px solid var(--color-highlight);
+    border: none;
     padding: 5px;
   }
 
+  .button--hide{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 20px;
+  }
+
+  .button--hide img{
+    width: 20px;
+  }
+
   .button:hover{
-    background-color: var(--color-highlight);
     cursor: pointer;
   }
 
@@ -131,8 +143,11 @@
   }
 
   .message--error{
-    color: #ff0000;
-    font-size: 1.2rem;
+    position: absolute;
+    bottom: 10px;
+    left: 145px;
+    text-decoration: underline;
+    color: var(--color-light);
     font-weight: bold;
     text-align: center;
   }
