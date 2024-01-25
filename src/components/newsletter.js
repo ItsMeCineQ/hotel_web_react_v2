@@ -11,7 +11,7 @@ export default function Newsletter() {
     const [submitSuccess, setSubmitSuccess] = useState(false);
 
     const openConfirmationModal = () => {
-        const modal = document.querySelector('.newsletter--success');
+        // const modal = document.querySelector('.newsletter--success');
         
         if(!email){
             setError('Please fill your email.');
@@ -21,15 +21,15 @@ export default function Newsletter() {
             setError('');
         }
         
-        modal.classList.remove('hidden');
+        // modal.classList.remove('hidden');
     }
     
     const closeNewsletter = () => {
         const newsletter = document.querySelector('.newsletter');
-        const newsletterSuccess = document.querySelector('.newsletter--success');
+        // const newsletterSuccess = document.querySelector('.newsletter--success');
 
         newsletter.classList.add('hidden');
-        newsletterSuccess.classList.add('hidden');
+        // newsletterSuccess.classList.add('hidden');
 
         setSubmitSuccess('');
         setEmail('');
@@ -43,10 +43,10 @@ export default function Newsletter() {
             <button onClick={openConfirmationModal} className="button_newsletter--submit"><img src={icon_mail}></img></button>
             <button onClick={closeNewsletter} className="button_newsletter--close"><img src={icon_close}></img></button>
             {error && <p className="newsletter--error">{error}</p>}
-            <div className="newsletter--success hidden">
-                <button className="button_newsletter--success--close"></button>
-                {submitSuccess && !error && <p>You have signed up for newsletter!</p>}
-            </div>
+                {submitSuccess && !error && <p className="newsletter--success">You have signed up for newsletter!</p>}
+                {/* <button className="button_newsletter--success--close"></button> */}
+            {/* <div className="newsletter--success hidden">
+            </div> */}
         </div>
     )
 }

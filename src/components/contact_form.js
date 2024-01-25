@@ -35,9 +35,12 @@ export default function ContactUs() {
 
     const closeModal = () => {
         const modal = document.querySelector('.modal--success');
+        const contactForm = document.querySelector('.contact--form');
+
         modal.classList.add('hidden');
 
         document.body.classList.remove('modal--open');
+        contactForm.classList.add('hidden');
     };
 
     return(

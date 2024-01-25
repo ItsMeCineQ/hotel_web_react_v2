@@ -68,8 +68,8 @@
     cursor: pointer;
 }
 
-.newsletter--success{
-    position: relative;
+/* .newsletter--success{
+    position: absolute;
     top: 50%;
     left: 50%;
     width: 150px;
@@ -77,9 +77,10 @@
     background-color: #0000004f;
     color: white;
     z-index: 10000;
-}
+} */
 
-.newsletter--error{
+.newsletter--error,
+.newsletter--success{
     height: 20px;
     font-size: 0.9rem;
     position: absolute;
