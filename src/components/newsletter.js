@@ -8,6 +8,7 @@ export default function Newsletter() {
 
     const [email, setEmail] = useState('');
     const [error, setError] = useState(false);
+    const [regulationsNotAccepted, setRegulationsNotAccepted] = useState(false);
     const [sendMail, setSendMail] = useState(false);
     const [regulationsChecked, setRegulationsChecked] = useState(false);
     
@@ -38,8 +39,8 @@ export default function Newsletter() {
     }
 
     const regulationsAccept = () => {
-        if(regulationsChecked){
-
+        if(!regulationsChecked){
+            setRegulationsNotAccepted('Please accept the regulations.');
         }
     }
 
@@ -56,6 +57,11 @@ export default function Newsletter() {
             <button onClick={closeNewsletter} className="button_newsletter--close"><img src={icon_close}></img></button>
             {error && <p className="newsletter--error">{error}</p>}
             <div className="newsletter--confirm hidden">
+                <div className="newsletter--confirm--regulations-accept">
+                    <input type="checkbox" className='newsletter--confirm--checkbox' value={setRegulationsChecked}></input>
+                    <p>Accept the regulations</p>
+                    <p>{regulationsNotAccepted}</p>
+                </div>
                 <div className="buttons_newsletter--confirm">
                 <button onClick={regulationsDecline} className="button_newsletter--confirm--decline">Decline</button>
                 <button onClick={regulationsAccept} className="button_newsletter--confirm--accept">Accept</button>

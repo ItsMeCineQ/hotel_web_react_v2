@@ -68,6 +68,13 @@
     cursor: pointer;
 }
 
+.newsletter--error{
+    height: 20px;
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: -30px;
+}
+
 .newsletter--confirm{
     position: absolute;
     bottom: -100px;
@@ -79,11 +86,19 @@
     z-index: 10000;
 }
 
-.newsletter--error{
-    height: 20px;
-    font-size: 0.9rem;
+.newsletter--confirm--regulations-accept{
     position: absolute;
-    bottom: -30px;
+    bottom: 70px;
+    left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.newsletter--confirm--checkbox{
+    bottom: 70px;
+    left: 40px;
 }
 
 .buttons_newsletter--confirm{
