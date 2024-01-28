@@ -14,9 +14,10 @@ export default function Newsletter() {
     
     const newsletterConfirm = document.querySelector('.newsletter--confirm');
     const newsletter = document.querySelector('.newsletter');
+    const regulationsDeclined = document.querySelector('.newsletter--confirm--regulations--declined');
 
     const openConfirmationModal = () => {
-        
+
         if(!email){
             setError('Please fill your email.');
         }else{
@@ -39,7 +40,9 @@ export default function Newsletter() {
     }
 
     const regulationsAccept = () => {
+
         if(!regulationsChecked){
+            regulationsDeclined.classList.remove('hidden');
             setRegulationsNotAccepted('Please accept the regulations.');
         } else {
             setRegulationsNotAccepted('');
@@ -47,11 +50,14 @@ export default function Newsletter() {
     }
 
     const regulationsDecline = () => {
+
         newsletterConfirm.classList.add('hidden');
         newsletter.classList.add('hidden');
+        regulationsDeclined.classList.add('hidden');
     }
 
     const handleCheckboxChange = () => {
+        
         setRegulationsChecked(!regulationsChecked);
         setRegulationsNotAccepted('');
     };
@@ -70,8 +76,8 @@ export default function Newsletter() {
                 </div>
                 <p className="newsletter--confirm--regulations--declined">{regulationsNotAccepted}</p>
                 <div className="buttons_newsletter--confirm">
-                    <button onClick={regulationsDecline} className="button_newsletter--confirm--decline">Decline</button>
-                    <button onClick={regulationsAccept} className="button_newsletter--confirm--accept">Accept</button>
+                    <button onClick={regulationsDecline} className="button_newsletter--confirm--decline">❌Decline</button>
+                    <button onClick={regulationsAccept} className="button_newsletter--confirm--accept">✅Accept</button>
                 {/* {regulationsAccept ? <p>You have successfully signed up for the newsletter!</p> : ''} */}
                 </div>
             </div>
