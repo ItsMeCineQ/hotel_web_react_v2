@@ -5,7 +5,7 @@ export default function Other() {
 
     const showNewsletter = () => {
         const newsletter = document.querySelector('.newsletter');
-        newsletter.classList.remove('hidden');
+        newsletter.classList.remove('newsletter--hidden');
     }
 
     return(
