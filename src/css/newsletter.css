@@ -89,11 +89,21 @@
 .newsletter--confirm--regulations-accept{
     position: absolute;
     bottom: 70px;
-    left: 50px;
+    left: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.8rem;
+}
+
+.newsletter--confirm--regulations--declined{
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    margin: 0;
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .newsletter--confirm--checkbox{

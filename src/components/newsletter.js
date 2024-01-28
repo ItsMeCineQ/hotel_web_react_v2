@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import '../css/newsletter.css';
 import icon_mail from '../img/icon_mail.png';
@@ -41,6 +41,8 @@ export default function Newsletter() {
     const regulationsAccept = () => {
         if(!regulationsChecked){
             setRegulationsNotAccepted('Please accept the regulations.');
+        } else {
+            setRegulationsNotAccepted('');
         }
     }
 
@@ -48,6 +50,11 @@ export default function Newsletter() {
         newsletterConfirm.classList.add('hidden');
         newsletter.classList.add('hidden');
     }
+
+    const handleCheckboxChange = () => {
+        setRegulationsChecked(!regulationsChecked);
+        setRegulationsNotAccepted('');
+    };
 
     return(
         <div className="newsletter hidden">
@@ -58,13 +65,13 @@ export default function Newsletter() {
             {error && <p className="newsletter--error">{error}</p>}
             <div className="newsletter--confirm hidden">
                 <div className="newsletter--confirm--regulations-accept">
-                    <input type="checkbox" className='newsletter--confirm--checkbox' value={setRegulationsChecked}></input>
+                    <input type="checkbox" className='newsletter--confirm--checkbox' onChange={handleCheckboxChange} checked={regulationsChecked}></input>
                     <p>Accept the regulations</p>
-                    <p>{regulationsNotAccepted}</p>
                 </div>
+                <p className="newsletter--confirm--regulations--declined">{regulationsNotAccepted}</p>
                 <div className="buttons_newsletter--confirm">
-                <button onClick={regulationsDecline} className="button_newsletter--confirm--decline">Decline</button>
-                <button onClick={regulationsAccept} className="button_newsletter--confirm--accept">Accept</button>
+                    <button onClick={regulationsDecline} className="button_newsletter--confirm--decline">Decline</button>
+                    <button onClick={regulationsAccept} className="button_newsletter--confirm--accept">Accept</button>
                 {/* {regulationsAccept ? <p>You have successfully signed up for the newsletter!</p> : ''} */}
                 </div>
             </div>
