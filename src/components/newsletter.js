@@ -18,6 +18,8 @@ export default function Newsletter() {
     const newsletter = document.querySelector('.newsletter');
     const regulationsDeclined = document.querySelector('.newsletter--confirm--regulations--declined');
 
+    
+
     const openConfirmationModal = () => {
 
         if(!email){
@@ -54,8 +56,8 @@ export default function Newsletter() {
             setRegulationsNotAccepted('Please accept the regulations.');
         } else {
             setRegulationsNotAccepted('');
-            newsletterRegulationsPositive.classList.remove('hidden');
-        }
+            timeoutOpenPositive();
+            }
     }
 
     const regulationsDecline = () => {
@@ -74,6 +76,22 @@ export default function Newsletter() {
         setRegulationsChecked(!regulationsChecked);
         setRegulationsNotAccepted('');
     };
+
+    const openPositive= () => {
+        const loading = document.querySelector('.newsletter--confirm--regulations--positive');
+        loading.classList.remove('hidden');
+    }
+
+    const closePositive = () => {
+        const loading = document.querySelector('.newsletter--confirm--regulations--positive');
+        loading.classList.add('hidden');
+    }
+
+    const timeoutOpenPositive = () => {
+        // setTimeout(closeLoading, 1000);
+        setTimeout(openPositive, 1000);
+        setTimeout(closePositive, 3000);
+    }
 
     return(
         
@@ -111,6 +129,7 @@ export default function Newsletter() {
                     <div className="newsletter--confirm--regulations--positive hidden">
                         <img src={icon_positive}></img>
                     </div>
+                    <div className="newsletter--confirm--regulations--load"></div>
                 </div>
             </div>
         </div>

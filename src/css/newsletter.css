@@ -193,6 +193,10 @@
     transition: transform 0.3s ease;
 }
 
+.newsletter--confirm--regulations--load{
+    
+}
+
 .newsletter--confirm--regulations--positive{
     position: absolute;
     border-radius: 100%;
