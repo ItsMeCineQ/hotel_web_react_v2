@@ -4,6 +4,7 @@ import '../css/newsletter.css';
 import icon_mail from '../img/icon_mail.png';
 import icon_close from '../img/icon_close.png';
 import icon_positive from '../img/icon_positive.png';
+import icon_loading from '../img/icon_loading.png';
 
 export default function Newsletter() {
 
@@ -56,11 +57,12 @@ export default function Newsletter() {
             setRegulationsNotAccepted('Please accept the regulations.');
         } else {
             setRegulationsNotAccepted('');
-            timeoutOpenPositive();
+            loadPositive();
+            timeoutPositive();
             }
     }
 
-    const regulationsDecline = () => {
+    const regulationsClose = () => {
 
         setConfirmationVisible(false);
         setRegulationsNotAccepted('');
@@ -77,18 +79,30 @@ export default function Newsletter() {
         setRegulationsNotAccepted('');
     };
 
+    const loadPositive = () => {
+        const showLoading = document.querySelector('.newsletter--confirm--regulations--load');
+        showLoading.classList.remove('hidden');
+    }
+
+    const closeLoading = () => {
+        const showLoading = document.querySelector('.newsletter--confirm--regulations--load');
+        showLoading.classList.add('hidden');
+    }
+
     const openPositive= () => {
-        const loading = document.querySelector('.newsletter--confirm--regulations--positive');
-        loading.classList.remove('hidden');
+        const loadSuccess = document.querySelector('.newsletter--confirm--regulations--positive');
+        loadSuccess.classList.remove('hidden');
     }
 
     const closePositive = () => {
-        const loading = document.querySelector('.newsletter--confirm--regulations--positive');
-        loading.classList.add('hidden');
+        const loadSuccess = document.querySelector('.newsletter--confirm--regulations--positive');
+        loadSuccess.classList.add('hidden');
+        regulationsClose();
+        
     }
 
-    const timeoutOpenPositive = () => {
-        // setTimeout(closeLoading, 1000);
+    const timeoutPositive = () => {
+        setTimeout(closeLoading, 1000);
         setTimeout(openPositive, 1000);
         setTimeout(closePositive, 3000);
     }
@@ -122,14 +136,16 @@ export default function Newsletter() {
                         </div>
                         <p className="newsletter--confirm--regulations--declined">{regulationsNotAccepted}</p>
                         <div className="buttons_newsletter--confirm">
-                            <button onClick={regulationsDecline} className="button_newsletter--confirm--decline">Decline</button>
+                            <button onClick={regulationsClose} className="button_newsletter--confirm--decline">Decline</button>
                             <button onClick={regulationsAccept} className="button_newsletter--confirm--accept">Accept</button>
                         </div>
                     </div>
                     <div className="newsletter--confirm--regulations--positive hidden">
                         <img src={icon_positive}></img>
                     </div>
-                    <div className="newsletter--confirm--regulations--load"></div>
+                    <div className="newsletter--confirm--regulations--load hidden">
+                        <img src={icon_loading}></img>
+                    </div>
                 </div>
             </div>
         </div>
