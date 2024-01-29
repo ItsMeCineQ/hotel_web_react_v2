@@ -62,11 +62,6 @@
     margin-right: 0.5rem;
   }
 
-  .map--under{
-    z-index: -1;
-    transition: none;
-  }
-
   .choose--date{
     font-size: 1.2rem;
     background-color: transparent;

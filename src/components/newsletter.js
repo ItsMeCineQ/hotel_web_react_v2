@@ -13,6 +13,7 @@ export default function Newsletter() {
     const [regulationsChecked, setRegulationsChecked] = useState(false);
     const [isConfirmationVisible, setConfirmationVisible] = useState(false);
     
+    const overlay = document.querySelector('.overlay');
     const newsletter = document.querySelector('.newsletter');
     const regulationsDeclined = document.querySelector('.newsletter--confirm--regulations--declined');
 
@@ -27,7 +28,8 @@ export default function Newsletter() {
         }
         
         setConfirmationVisible(true);
-        document.body.classList.add('newsletter--confirmation--open');
+        overlay.classList.add('overlay--active');
+        document.body.style.overflow = 'hidden';
     }
     
     const closeNewsletter = () => {
@@ -39,7 +41,8 @@ export default function Newsletter() {
         
         if(newsletter)
             newsletter.classList.add('newsletter--hidden');
-        document.body.classList.remove('newsletter--confirmation--open');
+        overlay.classList.remove('overlay--active');
+        document.body.style.overflow = '';
     }
 
     const regulationsAccept = () => {
@@ -56,10 +59,12 @@ export default function Newsletter() {
 
         setConfirmationVisible(false);
         setRegulationsNotAccepted('');
+        setRegulationsChecked(false);
 
         newsletter.classList.add('newsletter--hidden');
-        document.body.classList.remove('newsletter--confirmation--open');
-    }
+        overlay.classList.remove('overlay--active');
+        document.body.style.overflow = '';
+        }
 
     const handleCheckboxChange = () => {
         
@@ -68,6 +73,8 @@ export default function Newsletter() {
     };
 
     return(
+        
+        <div className="overlay">
         <div className='newsletter newsletter--hidden'>
             <p className="newsletter--message">Sign up for the newsletter, receive a discount and stay up to date!</p>
             <input type='text' value={email} onChange={e => setEmail(e.target.value)} className="newsletter--mail" placeholder="Your email..."></input>
@@ -94,12 +101,13 @@ export default function Newsletter() {
                     </div>
                     <p className="newsletter--confirm--regulations--declined">{regulationsNotAccepted}</p>
                     <div className="buttons_newsletter--confirm">
-                        <button onClick={regulationsDecline} className="button_newsletter--confirm--decline">❌Decline</button>
-                        <button onClick={regulationsAccept} className="button_newsletter--confirm--accept">✅Accept</button>
+                        <button onClick={regulationsDecline} className="button_newsletter--confirm--decline">Decline</button>
+                        <button onClick={regulationsAccept} className="button_newsletter--confirm--accept">Accept</button>
                     {/* {regulationsAccept ? <p>You have successfully signed up for the newsletter!</p> : ''} */}
                     </div>
                 </div>
-            </div>
+             </div>
+        </div>
         </div>
     )
 }

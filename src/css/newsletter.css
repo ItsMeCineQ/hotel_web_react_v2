@@ -1,3 +1,18 @@
+.overlay{
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: -21%;
+    z-index: 1;
+}
+
+.overlay--active{
+    width: 200%;
+    height: 100%;
+    background-color: var(--color-black-transparent);
+    z-index: 444;
+}
+
 .newsletter{
     width: 300px;
     height: 140px;
@@ -11,7 +26,7 @@
     position: fixed;
     bottom: 40%;
     right: 10px;
-    z-index: 9999;
+    z-index: 333;
     border-radius: 5px;
     backdrop-filter: blur(5px);
     transition: transform 0.3s ease;
@@ -88,7 +103,7 @@
     background-color: var(--color-light);
     box-shadow: 0 2px 9px 0 #00000080;
     color: black;
-    z-index: 10000;
+    z-index: 555;
     text-align: justify;
     padding: 0 2rem;
     font-size: 0.9rem;
@@ -139,10 +154,31 @@
     user-select: none;
 }
 
-.button_newsletter--confirm--decline,
 .button_newsletter--confirm--accept{
-    width: 70px;
+    width: 100px;
     height: 30px;
+    background-color: #61df61;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.button_newsletter--confirm--decline{
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    /* background-color: #fd6363; */
+    background-color: #a0a0a0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.button_newsletter--confirm--accept:hover,
+.button_newsletter--confirm--decline:hover{
+    cursor: pointer;
+    box-shadow: 0 0 2px black;
 }
 
 .administrator--data{
@@ -162,10 +198,10 @@
     display: none;
 }
 
-.newsletter--confirmation--open{
+/* .newsletter--confirmation--open{
     width: 100%;
     height: 100%;
     background-color: var(--color-black-transparent);
-    z-index: 222222;
+    z-index: 444;
     overflow: hidden;
-}
+} */

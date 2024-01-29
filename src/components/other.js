@@ -5,7 +5,10 @@ export default function Other() {
 
     const showNewsletter = () => {
         const newsletter = document.querySelector('.newsletter');
+        const newsletterOverlay = document.querySelector('.overlay');
+
         newsletter.classList.remove('newsletter--hidden');
+        // newsletterOverlay.
     }
 
     return(

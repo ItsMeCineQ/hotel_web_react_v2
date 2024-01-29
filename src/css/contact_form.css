@@ -15,7 +15,7 @@
     background-color: var(--color-black-transparent);
     box-shadow: 0 2px 9px 0 #00000080;
     backdrop-filter: blur(5px);
-    z-index: 999;
+    z-index: 333;
   }
   
   .contact--form span{
@@ -109,7 +109,7 @@
     background-color: var(--color-black-transparent);
     box-shadow: 0 0 4px black;
     border-radius: 15px;
-    z-index: 2222;
+    z-index: 222;
   }
 
   body.modal--open {
