@@ -19,8 +19,6 @@ export default function Newsletter() {
     const newsletter = document.querySelector('.newsletter');
     const regulationsDeclined = document.querySelector('.newsletter--confirm--regulations--declined');
 
-    
-
     const openConfirmationModal = () => {
 
         if(!email){

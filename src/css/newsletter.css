@@ -157,7 +157,7 @@
 .button_newsletter--confirm--accept{
     width: 100px;
     height: 30px;
-    background-color: #61df61;
+    background-color: var(--color-green);
     border: none;
     border-radius: 5px;
     font-size: 1.1rem;

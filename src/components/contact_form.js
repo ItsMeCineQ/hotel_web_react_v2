@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../css/contact_form.css';
 import icon_close from '../img/icon_close.png';
 import icon_mail from '../img/icon_mail.png';
+import icon_positive from '../img/icon_positive.png';
 
 export default function ContactUs() {
 
@@ -71,6 +72,7 @@ export default function ContactUs() {
                 {error && <p className="message--error">{error}</p>}
                 {formSubmitted && !error && 
                     <div className="modal--success">
+                        <img src={icon_positive} className='modal--success-image'></img>
                         <p>Your message was sent successfully!</p>
                         <button className='button--close-modal' onClick={closeModal}>OK</button>
                     </div>}
