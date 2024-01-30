@@ -16,21 +16,28 @@ export default function ContactUs() {
         if (!name || !mail || !topic || !message) {
             setError('Please fill in all fields.');
         } else {
+            setStates();
             setFormSubmitted(true);
-            setError('');
-            setName('');
-            setMail('');
-            setTopic('');
-            setMessage('');
             
             document.body.classList.add('modal--open');
         }
     };
 
+    const setStates = () => {
+        setFormSubmitted('');
+        setError('');
+        setName('');
+        setMail('');
+        setTopic('');
+        setMessage('');
+    }
+
     const closeForm = () => {
         const form = document.querySelector('.contact--form');
 
         form.classList.add('hidden');
+
+        setStates();
     }
 
     const closeModal = () => {
@@ -41,6 +48,8 @@ export default function ContactUs() {
 
         document.body.classList.remove('modal--open');
         contactForm.classList.add('hidden');
+
+        setStates();
     };
 
     return(

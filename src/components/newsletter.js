@@ -29,11 +29,11 @@ export default function Newsletter() {
             setSendMail(true);
             setEmail('');
             setError('');
+            setConfirmationVisible(true);
+            overlay.classList.add('overlay--active');
+            document.body.style.overflow = 'hidden';
         }
         
-        setConfirmationVisible(true);
-        overlay.classList.add('overlay--active');
-        document.body.style.overflow = 'hidden';
     }
     
     const closeNewsletter = () => {
