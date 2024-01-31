@@ -1,0 +1,15 @@
+.spinner{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    width: 100px;
+    animation: load 1s linear infinite;
+}
+
+.hidden{
+    display: none;
+}
+
+@keyframes load {
+    100%{transform: rotate(360deg);}
+}

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import '../css/newsletter.css';
+import { Spinner } from './spinner.js';
 import icon_mail from '../img/icon_mail.png';
 import icon_close from '../img/icon_close.png';
 import icon_positive from '../img/icon_positive.png';
@@ -31,7 +32,6 @@ export default function Newsletter() {
             overlay.classList.add('overlay--active');
             document.body.style.overflow = 'hidden';
         }
-        
     }
     
     const closeNewsletter = () => {
@@ -49,7 +49,6 @@ export default function Newsletter() {
 
     const regulationsAccept = () => {
 
-        const newsletterRegulationsPositive = document.querySelector('.newsletter--confirm--regulations--positive');
         if(!regulationsChecked){
             regulationsDeclined.classList.remove('hidden');
             setRegulationsNotAccepted('Please accept the regulations.');
@@ -96,7 +95,6 @@ export default function Newsletter() {
         const loadSuccess = document.querySelector('.newsletter--confirm--regulations--positive');
         loadSuccess.classList.add('hidden');
         regulationsClose();
-        
     }
 
     const timeoutPositive = () => {
@@ -144,6 +142,7 @@ export default function Newsletter() {
                     <div className="newsletter--confirm--regulations--load hidden">
                         <img src={icon_loading}></img>
                     </div>
+                    <Spinner className='spinner hidden'/>
                 </div>
             </div>
         </div>

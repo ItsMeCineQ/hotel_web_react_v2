@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../css/contact_form.css';
+import { Spinner } from './spinner.js';
 import icon_close from '../img/icon_close.png';
 import icon_mail from '../img/icon_mail.png';
 import icon_positive from '../img/icon_positive.png';
@@ -13,13 +14,16 @@ export default function ContactUs() {
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [error, setError] = useState('');
 
-    const sendQuestion = () => {
+    const sendQuestion = async () => {
         if (!name || !mail || !topic || !message) {
             setError('Please fill in all fields.');
         } else {
             setStates();
             setFormSubmitted(true);
             
+            if(Spinner){
+                await Spinner.loadTime(1000);
+            }
             document.body.classList.add('modal--open');
         }
     };
@@ -53,6 +57,7 @@ export default function ContactUs() {
         setStates();
     };
 
+
     return(
         <div className="contact--form hidden" id="contact">
             <span>Contact us with e-mail!</span>
@@ -70,6 +75,7 @@ export default function ContactUs() {
                 <button className='button button--hide' onClick={closeForm}><img src={icon_close}></img></button>
                 <button className='button button--submit' onClick={sendQuestion}><img src={icon_mail}></img></button>
                 {error && <p className="message--error">{error}</p>}
+                <Spinner />
                 {formSubmitted && !error && 
                     <div className="modal--success">
                         <img src={icon_positive} className='modal--success-image'></img>
