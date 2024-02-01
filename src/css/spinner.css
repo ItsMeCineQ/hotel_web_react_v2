@@ -6,6 +6,10 @@
     animation: load 1s linear infinite;
 }
 
+.spinner img{
+    width: 100%;
+}
+
 .hidden{
     display: none;
 }
