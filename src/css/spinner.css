@@ -4,6 +4,7 @@
     left: 40%;
     width: 100px;
     animation: load 1s linear infinite;
+    z-index: 9999;
 }
 
 .spinner img{

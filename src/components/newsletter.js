@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React,{ useState } from "react";
 import '../css/newsletter.css';
-import { Spinner } from './spinner.js';
+import {Spinner, loadTime } from './spinner.js';
 import icon_mail from '../img/icon_mail.png';
 import icon_close from '../img/icon_close.png';
 import icon_positive from '../img/icon_positive.png';
-import icon_loading from '../img/icon_loading.png';
 
 export default function Newsletter() {
 
@@ -15,16 +13,16 @@ export default function Newsletter() {
     const [sendMail, setSendMail] = useState(false);
     const [regulationsChecked, setRegulationsChecked] = useState(false);
     const [isConfirmationVisible, setConfirmationVisible] = useState(false);
-    
+    const [isPositiveVisible, setPositiveVisible] = useState(false);
+
     const overlay = document.querySelector('.overlay');
     const newsletter = document.querySelector('.newsletter');
     const regulationsDeclined = document.querySelector('.newsletter--confirm--regulations--declined');
 
     const openConfirmationModal = () => {
-
-        if(!email){
-            setError('Please fill your email.');
-        }else{
+        if (!email) {
+            setError('Please fill in your email.');
+        } else {
             setSendMail(true);
             setEmail('');
             setError('');
@@ -33,75 +31,51 @@ export default function Newsletter() {
             document.body.style.overflow = 'hidden';
         }
     }
-    
-    const closeNewsletter = () => {
 
+    const closeNewsletter = () => {
         setConfirmationVisible(false);
+        setPositiveVisible(false);
         setSendMail(false);
         setEmail('');
         setError('');
-        
-        if(newsletter)
+
+        if (newsletter)
             newsletter.classList.add('newsletter--hidden');
         overlay.classList.remove('overlay--active');
         document.body.style.overflow = '';
     }
 
-    const regulationsAccept = () => {
-
-        if(!regulationsChecked){
+    const regulationsAccept = async () => {
+        if (!regulationsChecked) {
             regulationsDeclined.classList.remove('hidden');
             setRegulationsNotAccepted('Please accept the regulations.');
         } else {
-            setRegulationsNotAccepted('');
-            loadPositive();
-            timeoutPositive();
-            }
+            await loadTime(1000); 
+            setPositiveVisible(true);
+            setTimeout(() => {
+                setConfirmationVisible(false);
+                setPositiveVisible(false);
+                closeNewsletter();
+            }, 2000);
+        }
     }
 
     const regulationsClose = () => {
-
         setConfirmationVisible(false);
+        setPositiveVisible(false);
         setRegulationsNotAccepted('');
         setRegulationsChecked(false);
 
         newsletter.classList.add('newsletter--hidden');
         overlay.classList.remove('overlay--active');
         document.body.style.overflow = '';
-        }
+    }
 
     const handleCheckboxChange = () => {
-        
         setRegulationsChecked(!regulationsChecked);
         setRegulationsNotAccepted('');
     };
 
-    const loadPositive = () => {
-        const showLoading = document.querySelector('.newsletter--confirm--regulations--load');
-        showLoading.classList.remove('hidden');
-    }
-
-    const closeLoading = () => {
-        const showLoading = document.querySelector('.newsletter--confirm--regulations--load');
-        showLoading.classList.add('hidden');
-    }
-
-    const openPositive= () => {
-        const loadSuccess = document.querySelector('.newsletter--confirm--regulations--positive');
-        loadSuccess.classList.remove('hidden');
-    }
-
-    const closePositive = () => {
-        const loadSuccess = document.querySelector('.newsletter--confirm--regulations--positive');
-        loadSuccess.classList.add('hidden');
-        regulationsClose();
-    }
-
-    const timeoutPositive = () => {
-        setTimeout(closeLoading, 1000);
-        setTimeout(openPositive, 1000);
-        setTimeout(closePositive, 3000);
-    }
 
     return(
         
@@ -133,16 +107,13 @@ export default function Newsletter() {
                         <p className="newsletter--confirm--regulations--declined">{regulationsNotAccepted}</p>
                         <div className="buttons_newsletter--confirm">
                             <button onClick={regulationsClose} className="button_newsletter--confirm--decline">Decline</button>
-                            <button onClick={regulationsAccept} className="button_newsletter--confirm--accept">Accept</button>
+                            <button onClick={async () => {await regulationsAccept()}} className="button_newsletter--confirm--accept">Accept</button>
                         </div>
                     </div>
-                    <div className="newsletter--confirm--regulations--positive hidden">
+                    <Spinner />
+                    <div className={`newsletter--confirm--regulations--positive ${isPositiveVisible ? '' : 'hidden'}`}>
                         <img src={icon_positive}></img>
                     </div>
-                    <div className="newsletter--confirm--regulations--load hidden">
-                        <img src={icon_loading}></img>
-                    </div>
-                    <Spinner className='spinner hidden'/>
                 </div>
             </div>
         </div>

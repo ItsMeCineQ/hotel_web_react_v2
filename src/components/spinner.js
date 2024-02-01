@@ -2,7 +2,7 @@ import React from "react";
 import '../css/spinner.css';
 import icon_loading from '../img/icon_loading.png';
 
-export const loadTime = async (time) => {
+const loadTime = async (time) => {
     const spinner = document.querySelector('.spinner');
 
     if (spinner) {
@@ -17,10 +17,12 @@ export const loadTime = async (time) => {
     }
 }
 
-export function Spinner () {
+function Spinner () {
     return(
         <div className="spinner hidden">
             <img src={icon_loading}></img>
         </div>
     )
 }
+
+export { Spinner, loadTime};
