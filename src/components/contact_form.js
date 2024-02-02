@@ -70,7 +70,7 @@ export default function ContactUs() {
                 </select>
                 <textarea className="form--contact-message" cols="30" rows="10" placeholder="Your message..." value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                 <button className='button button--hide' onClick={closeForm}><img src={icon_close}></img></button>
-                <button className='button button--submit' onClick={async () => { await sendQuestion() }}><img src={icon_mail}></img></button>
+                <button className='button button--submit' onClick={() => {loadTime(1000); sendQuestion()}}><img src={icon_mail}></img></button>
                 {error && <p className="message--error">{error}</p>}
                 <Spinner />
                 {formSubmitted && !error &&

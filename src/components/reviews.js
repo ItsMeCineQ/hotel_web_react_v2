@@ -48,27 +48,6 @@ export default function Reviews() {
                 }
                 return reviewElements;
             })}
-            {/* <div className="reviews--review">
-                <img src={icon_quote} alt="quote" className="icon--quote-start" />
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?
-                </p>
-                <img src={icon_quote} alt="quote" className="icon--quote-end" />
-            </div>
-            <div className="reviews--review">
-                <img src={icon_quote} alt="quote" className="icon--quote-start" />
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?
-                </p>
-                <img src={icon_quote} alt="quote" className="icon--quote-end" />
-            </div>
-            <div className="reviews--review">
-                <img src={icon_quote} alt="quote" className="icon--quote-start" />
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nam eaque facilis consectetur delectus est libero omnis dignissimos aperiam voluptatem?
-                </p>
-                <img src={icon_quote} alt="quote" className="icon--quote-end" />
-            </div> */}
             <button className={`button--reviews ${isExpanded ? 'button--reviews-expand' : ''}`} onClick={toggleReviews}>
                 <img src={icon_arrow} alt="arrow" className={`icon--arrow ${isExpanded ? 'rotate' : ''}`} />
             </button>

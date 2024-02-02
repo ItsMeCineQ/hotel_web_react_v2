@@ -39,25 +39,31 @@ export default function Newsletter() {
         setEmail('');
         setError('');
 
-        if (newsletter)
+        if(newsletter)
             newsletter.classList.add('newsletter--hidden');
-        overlay.classList.remove('overlay--active');
+
         document.body.style.overflow = '';
     }
 
-    const regulationsAccept = async () => {
+    const regulationsAccept = () => {
         if (!regulationsChecked) {
             regulationsDeclined.classList.remove('hidden');
             setRegulationsNotAccepted('Please accept the regulations.');
         } else {
-            await loadTime(1000); 
+            positiveTimeout();
             setPositiveVisible(true);
+        }
+    }
+
+    const positiveTimeout = () => {
+
+        setPositiveVisible(true);
             setTimeout(() => {
                 setConfirmationVisible(false);
                 setPositiveVisible(false);
                 closeNewsletter();
+                overlay.classList.remove('overlay--active');
             }, 2000);
-        }
     }
 
     const regulationsClose = () => {
@@ -76,6 +82,10 @@ export default function Newsletter() {
         setRegulationsNotAccepted('');
     };
 
+    const handleAcceptClick = async () => {
+        await loadTime(1000);
+        regulationsAccept();
+    };
 
     return(
         
@@ -107,10 +117,10 @@ export default function Newsletter() {
                         <p className="newsletter--confirm--regulations--declined">{regulationsNotAccepted}</p>
                         <div className="buttons_newsletter--confirm">
                             <button onClick={regulationsClose} className="button_newsletter--confirm--decline">Decline</button>
-                            <button onClick={async () => {await regulationsAccept()}} className="button_newsletter--confirm--accept">Accept</button>
+                            <button onClick={handleAcceptClick} className="button_newsletter--confirm--accept">Accept</button>
                         </div>
                     </div>
-                    <Spinner />
+                <Spinner />
                     <div className={`newsletter--confirm--regulations--positive ${isPositiveVisible ? '' : 'hidden'}`}>
                         <img src={icon_positive}></img>
                     </div>
