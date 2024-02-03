@@ -14,6 +14,7 @@ export default function Newsletter() {
     const [regulationsChecked, setRegulationsChecked] = useState(false);
     const [isConfirmationVisible, setConfirmationVisible] = useState(false);
     const [isPositiveVisible, setPositiveVisible] = useState(false);
+    const [showSpinner, setShowSpinner] = useState(false);
 
     const overlay = document.querySelector('.overlay');
     const newsletter = document.querySelector('.newsletter');
@@ -45,19 +46,21 @@ export default function Newsletter() {
         document.body.style.overflow = '';
     }
 
-    const regulationsAccept = () => {
+    const regulationsAccept = async () => {
         if (!regulationsChecked) {
             regulationsDeclined.classList.remove('hidden');
             setRegulationsNotAccepted('Please accept the regulations.');
         } else {
+            setShowSpinner(true);
+            await loadTime(1000);
+            setShowSpinner(false);
             positiveTimeout();
-            setPositiveVisible(true);
         }
     }
 
     const positiveTimeout = () => {
-
         setPositiveVisible(true);
+        
             setTimeout(() => {
                 setConfirmationVisible(false);
                 setPositiveVisible(false);
@@ -80,11 +83,6 @@ export default function Newsletter() {
     const handleCheckboxChange = () => {
         setRegulationsChecked(!regulationsChecked);
         setRegulationsNotAccepted('');
-    };
-
-    const handleAcceptClick = async () => {
-        await loadTime(1000);
-        regulationsAccept();
     };
 
     return(
@@ -117,10 +115,10 @@ export default function Newsletter() {
                         <p className="newsletter--confirm--regulations--declined">{regulationsNotAccepted}</p>
                         <div className="buttons_newsletter--confirm">
                             <button onClick={regulationsClose} className="button_newsletter--confirm--decline">Decline</button>
-                            <button onClick={handleAcceptClick} className="button_newsletter--confirm--accept">Accept</button>
+                            <button onClick={regulationsAccept} className="button_newsletter--confirm--accept">Accept</button>
                         </div>
                     </div>
-                <Spinner />
+                {showSpinner && <Spinner />}
                     <div className={`newsletter--confirm--regulations--positive ${isPositiveVisible ? '' : 'hidden'}`}>
                         <img src={icon_positive}></img>
                     </div>

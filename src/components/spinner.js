@@ -10,16 +10,16 @@ const loadTime = async (time) => {
 
         await new Promise((resolve) => {
             setTimeout(() => {
+                console.log('spinner');
                 spinner.classList.add('hidden');
                 resolve();
-                console.log('spinner');
             }, time);
         });
 }
 
 function Spinner () {
     return(
-        <div className="spinner hidden">
+        <div className="spinner">
             <img src={icon_loading}></img>
         </div>
     )
