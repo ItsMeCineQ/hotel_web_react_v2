@@ -2,16 +2,17 @@ import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/header';
 import Slider from './components/slider';
-import Map from './components/map';
 import CheckAvailability from './components/availability';
 import AboutUs from './components/about_us';
 import Spa from './components/spa';
-import ContactForm from './components/contact_form';
-import Footer from './components/footer';
+import Restaurant from './components/restaurant';
 import Reviews from './components/reviews';
 import Contact from './components/contact';
 import Other from './components/other';
+import Map from './components/map';
+import ContactForm from './components/contact_form';
 import Newsletter from './components/newsletter';
+import Footer from './components/footer';
 
 export default function App() {
 
@@ -44,6 +45,7 @@ export default function App() {
         <CheckAvailability />
         <AboutUs />
         <Spa />
+        <Restaurant />
         <Reviews />
       </div>
       <div className='essentials'>

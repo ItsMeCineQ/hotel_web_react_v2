@@ -1,0 +1,27 @@
+.restaurant--container{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    height: 600px;
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.restaurant--container img{
+    height: 80%;
+}
+
+.restaurant--container-details{
+    margin-top: 2rem;
+    width: 500px;
+}
+
+.restaurant--container-details p{
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: justify;
+    margin-top: 2rem;
+}

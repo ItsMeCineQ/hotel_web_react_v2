@@ -22,35 +22,37 @@ export default function Reviews() {
       }, [isExpanded]);
     
     return(
-        <div ref={sectionReviewsRef} className={`reviews--container section ${isExpanded ? 'reviews--expand' : 'reviews--collapse'}`} id="reviews">
-            {hotelObjects.map((hotel, hotelIndex) => {
-                const reviewElements = [];
-                
-                for (let reviewIndex = 0; reviewIndex < hotel.reviews.reviews_users.length; reviewIndex++) {
-                    const elReview = hotel.reviews.reviews_users[reviewIndex];
-                    const reviewElement = (
-                        <div className="reviews--review" key={reviewIndex}>
-                            <h2 className='hotel--name'>{hotel.name}</h2>
-                            <div key={reviewIndex}>
-                                <div className='user--review'>
-                                    <h2 className='user--name'>{elReview}</h2>
-                                    <p className='user--reviews_review'>{hotel.reviews.reviews_rates[reviewIndex]}/5{'⭐'}</p>
-                                </div>
-                                <div className='reviews--quotes'>
-                                    <img src={icon_quote} alt="quote" className="icon--quote icon--quote-start" />
-                                    <p className='user--reviews_text'>{hotel.reviews.reviews_text[reviewIndex]}</p>
-                                    <img src={icon_quote} alt="quote" className="icon--quote icon--quote-end" />
+        <div id='reviews' className='reviews'>
+            <div ref={sectionReviewsRef} className={`reviews--container section ${isExpanded ? 'reviews--expand' : 'reviews--collapse'}`}>
+                {hotelObjects.map((hotel, hotelIndex) => {
+                    const reviewElements = [];
+                    
+                    for (let reviewIndex = 0; reviewIndex < hotel.reviews.reviews_users.length; reviewIndex++) {
+                        const elReview = hotel.reviews.reviews_users[reviewIndex];
+                        const reviewElement = (
+                            <div className="reviews--review" key={reviewIndex}>
+                                <h2 className='hotel--name'>{hotel.name}</h2>
+                                <div key={reviewIndex}>
+                                    <div className='user--review'>
+                                        <h2 className='user--name'>{elReview}</h2>
+                                        <p className='user--reviews_review'>{hotel.reviews.reviews_rates[reviewIndex]}/5{'⭐'}</p>
+                                    </div>
+                                    <div className='reviews--quotes'>
+                                        <img src={icon_quote} alt="quote" className="icon--quote icon--quote-start" />
+                                        <p className='user--reviews_text'>{hotel.reviews.reviews_text[reviewIndex]}</p>
+                                        <img src={icon_quote} alt="quote" className="icon--quote icon--quote-end" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    );
-                    reviewElements.push(reviewElement);
-                }
-                return reviewElements;
-            })}
-            <button className={`button--reviews ${isExpanded ? 'button--reviews-expand' : ''}`} onClick={toggleReviews}>
-                <img src={icon_arrow} alt="arrow" className={`icon--arrow ${isExpanded ? 'rotate' : ''}`} />
-            </button>
+                        );
+                        reviewElements.push(reviewElement);
+                    }
+                    return reviewElements;
+                })}
+                <button className={`button--reviews ${isExpanded ? 'button--reviews-expand' : ''}`} onClick={toggleReviews}>
+                    <img src={icon_arrow} alt="arrow" className={`icon--arrow ${isExpanded ? 'rotate' : ''}`} />
+                </button>
+            </div>
         </div>
     )
 }

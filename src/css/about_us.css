@@ -8,16 +8,12 @@
     margin: 10rem 0;
     padding: 10rem 0;
     border-top: 1px solid black;
-    letter-spacing: 1px;
-    line-height: 2rem;
   }
   
   .about_us--content{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin: 2rem 0;
+    gap: 5rem;
+    margin: 4rem 0;
     width: 100%;
   }
   
@@ -31,6 +27,16 @@
     filter: blur(20px);
   }
   
+  .about_us--content-text{
+    margin-top: 2rem;
+    letter-spacing: 1px;
+    line-height: 2.5rem;
+  }
+
+  .about_us--content-text h1{
+    margin-bottom: 2rem;
+  }
+  
   .about_us--content p{
     font-size: 1.5rem;
     text-align: justify;
@@ -38,4 +44,8 @@
   
   .reverse{
     flex-direction: row-reverse;
+  }
+
+  .reverse h1{
+    text-align: right;
   }

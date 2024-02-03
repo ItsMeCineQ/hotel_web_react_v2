@@ -11,7 +11,7 @@ export default function contact() {
     }
 
     return(
-        <div className="contact--container">
+        <div id='contact' className="contact--container">
             <img src={hotels.OldTown.image}></img>
             <h2>Hotel.ly group</h2>
             <p>{hotels.OldTown.address.street} {hotels.OldTown.address.number}</p>
