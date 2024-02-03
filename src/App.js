@@ -5,6 +5,7 @@ import Slider from './components/slider';
 import Map from './components/map';
 import CheckAvailability from './components/availability';
 import AboutUs from './components/about_us';
+import Spa from './components/spa';
 import ContactForm from './components/contact_form';
 import Footer from './components/footer';
 import Reviews from './components/reviews';
@@ -42,6 +43,7 @@ export default function App() {
         <Slider />
         <CheckAvailability />
         <AboutUs />
+        <Spa />
         <Reviews />
       </div>
       <div className='essentials'>
