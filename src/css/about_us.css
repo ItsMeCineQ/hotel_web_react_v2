@@ -47,6 +47,9 @@
   
   .reverse{
     flex-direction: row-reverse;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10rem 0;
   }
 
   .reverse h1{

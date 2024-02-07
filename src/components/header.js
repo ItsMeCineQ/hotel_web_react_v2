@@ -1,7 +1,14 @@
 import '../css/header.css'
 import { useEffect } from 'react'
+import icon_menu from '../img/icon_menu.png'
 
 const Header = function () {
+
+  const openMenu = () => {
+    const menu = document.querySelector('.nav--links');
+
+    menu.classList.toggle('nav--links-active');
+  }
 
     useEffect(() => {
       const handleNavLinkClick = (e) => {
@@ -47,6 +54,7 @@ const Header = function () {
             <div className="nav--menu">
                 <h1 className="header--logo">Hotel.ly</h1>
                 <div className="header--menu">
+                  <img src={icon_menu} onClick={openMenu} className='nav--menu-burger'></img>
                     <ul className="nav--links">
                         <li><a className="nav--link" href="#home">Home</a></li>
                         <li><a className="nav--link" href="#about_us">About us</a></li>
