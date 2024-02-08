@@ -1,6 +1,7 @@
 import '../css/header.css'
 import { useEffect } from 'react'
 import icon_menu from '../img/icon_menu.png'
+import icon_close from '../img/icon_close.png'
 
 const Header = function () {
 
@@ -55,6 +56,7 @@ const Header = function () {
                 <h1 className="header--logo">Hotel.ly</h1>
                 <div className="header--menu">
                   <img src={icon_menu} onClick={openMenu} className='nav--menu-burger'></img>
+                  <button className='btn_nav--menu-close'><img src={icon_close}></img></button>
                     <ul className="nav--links">
                         <li><a className="nav--link" href="#home">Home</a></li>
                         <li><a className="nav--link" href="#about_us">About us</a></li>
