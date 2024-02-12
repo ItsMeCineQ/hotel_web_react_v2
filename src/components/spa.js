@@ -7,7 +7,6 @@ export default function Spa () {
     return(
         <div id='spa' className="spa--container section">
             <img src={spa_image} className="spa--overlay"></img>
-            <h1>Relaxation zone</h1>
             <div className="spa--container-details">
                 <img src={spa_image2}></img>
                 <div className="spa--container-details_text">
