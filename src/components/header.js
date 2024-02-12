@@ -65,7 +65,9 @@ const Header = function () {
                 <h1 className="header--logo">Hotel.ly</h1>
                 <div className="header--menu">
                   <button onClick={openMenu} className='nav--menu-burger'><img src={icon_menu}></img></button>
-                    <ul className="nav--links">
+                    <ul className="nav--links" onClick={(e) => {
+                      e.target.classList.contains('nav--link') && closeMenu();
+                    }}>
                         <button onClick={closeMenu} className={`btn_nav--menu-close${isButtonCloseVisible ? '-active' : ''}`}><img src={icon_close}></img></button>
                         <li><a className="nav--link" href="#home">Home</a></li>
                         <li><a className="nav--link" href="#about_us">About us</a></li>
