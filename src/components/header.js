@@ -1,14 +1,23 @@
 import '../css/header.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import icon_menu from '../img/icon_menu.png'
 import icon_close from '../img/icon_close.png'
 
 const Header = function () {
 
-  const openMenu = () => {
-    const menu = document.querySelector('.nav--links');
+  const [isButtonCloseVisible, setButtonCloseVisible] = useState(false);
+  const menu = document.querySelector('.nav--links');
 
-    menu.classList.toggle('nav--links-active');
+  const openMenu = () => {
+    if(menu){
+      menu.classList.add('nav--links-active');
+    }
+    setButtonCloseVisible(true);
+  }
+
+  const closeMenu = () => {
+    menu.classList.remove('nav--links-active');
+    setButtonCloseVisible(false);
   }
 
     useEffect(() => {
@@ -55,9 +64,9 @@ const Header = function () {
             <div className="nav--menu">
                 <h1 className="header--logo">Hotel.ly</h1>
                 <div className="header--menu">
-                  <img src={icon_menu} onClick={openMenu} className='nav--menu-burger'></img>
-                  <button className='btn_nav--menu-close'><img src={icon_close}></img></button>
+                  <button onClick={openMenu} className='nav--menu-burger'><img src={icon_menu}></img></button>
                     <ul className="nav--links">
+                        <button onClick={closeMenu} className={`btn_nav--menu-close${isButtonCloseVisible ? '-active' : ''}`}><img src={icon_close}></img></button>
                         <li><a className="nav--link" href="#home">Home</a></li>
                         <li><a className="nav--link" href="#about_us">About us</a></li>
                         <li><a className="nav--link" href="#spa">Relax</a></li>
