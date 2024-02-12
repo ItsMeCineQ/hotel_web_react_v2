@@ -39,3 +39,13 @@
 .react-calendar__month-view__weekdays__weekday{
     color: black;
 }
+
+@media only screen and (max-width: 610px){
+    .calendar--start{
+        left: 0;
+    }
+
+    .calendar--end{
+        left: 83px;
+    }
+  }
