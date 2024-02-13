@@ -13,12 +13,15 @@ export default function ContactUs() {
     const [message, setMessage] = useState('');
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [error, setError] = useState('');
+    const [showSpinner, setShowSpinner] = useState(false);
 
     const sendQuestion = async () => {
         if (!name || !mail || !topic || !message) {
             setError('Please fill in all fields.');
         } else {
+            setShowSpinner(true);
             await loadTime(1000);
+            setShowSpinner(false);
             setStates();
             setFormSubmitted(true);
             // document.body.classList.add('modal--open');
@@ -72,7 +75,7 @@ export default function ContactUs() {
                 <button className='button button--hide' onClick={closeForm}><img src={icon_close}></img></button>
                 <button className='button button--submit' onClick={sendQuestion}><img src={icon_mail}></img></button>
                 {error && <p className="message--error">{error}</p>}
-                <Spinner />
+                {showSpinner && <Spinner />}
                 {formSubmitted && !error &&
                     <div className="modal--success">
                         <img src={icon_positive} className='modal--success-image'></img>
