@@ -22,9 +22,10 @@ export default function Reviews() {
       }, [isExpanded]);
     
     return(
-        <div id='reviews' className='reviews'>
-            <div ref={sectionReviewsRef} className={`reviews--container section ${isExpanded ? 'reviews--expand' : 'reviews--collapse'}`}>
-                {hotelObjects.map((hotel, hotelIndex) => {
+        <div id='reviews' className='reviews section'>
+           <h1>Check out guests reviews!</h1>
+            <div ref={sectionReviewsRef} className={`reviews--container ${isExpanded ? 'reviews--expand' : 'reviews--collapse'}`}>
+                {hotelObjects.map((hotel) => {
                     const reviewElements = [];
                     
                     for (let reviewIndex = 0; reviewIndex < hotel.reviews.reviews_users.length; reviewIndex++) {
