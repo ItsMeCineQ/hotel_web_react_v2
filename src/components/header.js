@@ -71,6 +71,7 @@ const Header = function () {
                         <button onClick={closeMenu} className={`btn_nav--menu-close${isButtonCloseVisible ? '-active' : ''}`}><img src={icon_close}></img></button>
                         <li><a className="nav--link" href="#home">Home</a></li>
                         <li><a className="nav--link" href="#about_us">About us</a></li>
+                        <li><a className="nav--link" href="#map">Find us</a></li>
                         <li><a className="nav--link" href="#spa">Relax</a></li>
                         <li><a className="nav--link" href="#restaurant">Restaurant</a></li>
                         <li><a className="nav--link" href="#reviews">Reviews</a></li>

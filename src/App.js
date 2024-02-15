@@ -44,6 +44,7 @@ export default function App() {
         <Slider />
         <CheckAvailability />
         <AboutUs />
+        <Map />
         <Spa />
         <Restaurant />
         <Reviews />
@@ -51,7 +52,6 @@ export default function App() {
       <div className='essentials'>
         <Contact />
         <ContactForm />
-        <Map />
         <Other />
         <Newsletter />
       </div>
