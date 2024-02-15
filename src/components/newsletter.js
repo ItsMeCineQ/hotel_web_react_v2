@@ -39,6 +39,7 @@ export default function Newsletter() {
         setSendMail(false);
         setEmail('');
         setError('');
+        setRegulationsChecked(false);
 
         if(newsletter)
             newsletter.classList.add('newsletter--hidden');

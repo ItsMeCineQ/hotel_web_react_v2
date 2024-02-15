@@ -9,6 +9,7 @@
     align-items: center;
     z-index: 1;
     background-color: black;
+    filter: brightness(0.6);
   }
   
   .button--arrow{

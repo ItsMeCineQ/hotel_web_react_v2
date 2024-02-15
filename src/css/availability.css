@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
 .book--container{
     margin: auto;
     margin-top: 5rem;
+    padding: 2rem;
     text-align: center;
     transform: translateY(100%);
     transition: 0.7s ease-out;
@@ -8,6 +11,15 @@
     position: absolute;
     top: 60%;
     z-index: 111;
+    border: 3px solid white;
+}
+
+.book--container h1{
+  position: absolute;
+  top: -50px;
+  color: white;
+  font-family: 'Dancing Script';
+  font-size: 2.5rem;
 }
 
 .book--container-visible{
@@ -17,8 +29,7 @@
 
 .form--book{
     margin: auto;
-    width: 600px;
-    margin-top: 3rem;
+    width: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,63 +39,99 @@
     box-shadow: 0 0 5px var(--color-logo);
     border: 1px solid black;
     border-bottom: none;
-    padding: 1rem 0;
+    padding: 1rem;
   }
   
   .form--select{
-    height: 30px;
+    height: 50px;
     font-size: 1.2rem;
     margin-right: 1rem;
-    background-color: #000000d3;
-    color: white;
+    padding: 5px;
+    background-color: white;
+    color: black;
+  }
+
+  .form--select:hover{
+    cursor: pointer;
   }
   
   .form--submit{
-    background-color: transparent;
+    background-color: var(--color-orange2);
     border: none;
-    border-radius: 25px;
     height: 50px;
-    width: 60px;
+    width: 210px;
   }
   
+  .form--submit p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
   .form--submit:hover{
     cursor: pointer;
-    box-shadow: 0 0 5px var(--color-light);
   }
   
   .form--submit img{
-    width: 30px;
-    height: 30px;
+    width: 20px;
   }
 
   .choose--date{
-    width: 100px;
-    margin-right: 0.5rem;
-  }
-
-  .choose--date{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 150px;
+    height: 40px;
+    margin-right: 1rem;
     font-size: 1.2rem;
-    background-color: transparent;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 5px;
     user-select: none;
-    border-left: 1px solid white;
+  }
+
+  .choose--date:hover{
+    cursor: pointer;
+  }
+  
+  .choose--date img{
+    width: 20px;
   }
 
   .icon--search{
     width: 25px;
   }
 
-  @media only screen and (max-width: 610px){
-    .form--book{
-      width: 400px;
-      padding: 1rem;
+  @media only screen and (max-width: 915px){
+    .book--container{
+      top: 30%;
     }
-  }
 
-  @media only screen and (max-width: 440px){
+    .book--container h1{
+      top: -40px;
+      font-size: 2rem;
+    }
+    
     .form--book{
-      width: 350px;
-      padding: 1rem;
+      flex-direction: column;
+      margin: 0;
+      width: 300px;
+      height: 300px;
+      padding: 2rem 0;
+      gap: 2rem;
+    }
+
+    .form--select{
+      width: 210px;
+      margin: 0;
+    }
+
+    .choose--date{
+      width: 200px;
+      margin: 0;
     }
   }

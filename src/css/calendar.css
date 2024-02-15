@@ -10,7 +10,7 @@
 .calendar--end{
     position: absolute;
     top: -283px;
-    left: 250px;
+    left: 320px;
     width: 100%;
     height: 100%;
     z-index: 2;
@@ -40,12 +40,14 @@
     color: black;
 }
 
-@media only screen and (max-width: 610px){
+@media only screen and (max-width: 850px){
     .calendar--start{
+        top: -165px;
         left: 0;
     }
 
     .calendar--end{
-        left: 83px;
+        top: -84px;
+        left: 0;
     }
   }

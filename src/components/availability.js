@@ -1,6 +1,7 @@
 import '../css/availability.css';
 import '../css/calendar.css'
-import icon_search from '../img/icon_search2.png';
+import icon_search from '../img/icon_search.png';
+import icon_calendar from '../img/icon_calendar.png';
 import { useState, useEffect } from 'react';
 import CalendarComponent from './calendar.js';
 
@@ -78,6 +79,7 @@ export default function CheckAvailability() {
 
     return(
         <div className="book--container" id="book">
+          <h1>Make a reservation online</h1>
             <div className="form--book">
                 <select name="hotel" className="form--select">
                     <option value="OldTown">Old Town Hotel</option>
@@ -86,10 +88,10 @@ export default function CheckAvailability() {
                     <option value="Station">Main Station Hotel</option>
                 </select>
                 <div className="choose--date date--start" onClick={() => openCalendar('calendar--start')}>
-                    <p>{selectedStartDate && selectedStartDate >= isToday ? selectedStartDate.toLocaleDateString() : 'Start date'}</p>
+                    <p>{selectedStartDate && selectedStartDate >= isToday ? selectedStartDate.toLocaleDateString() : 'Start date'}</p><img src={icon_calendar}></img>
                 </div>
                 <div className="choose--date date--end" onClick={() => openCalendar('calendar--end')}>
-                    <p>{selectedEndDate > selectedStartDate ? selectedEndDate.toLocaleDateString() : 'End date'}</p>
+                    <p>{selectedEndDate > selectedStartDate ? selectedEndDate.toLocaleDateString() : 'End date'}</p><img src={icon_calendar}></img>
                 </div>
                 <div className='calendar--start'>
                     <CalendarComponent onDateChange={(date) => handleDateChange(date, true)} />
@@ -98,7 +100,7 @@ export default function CheckAvailability() {
                     <CalendarComponent onDateChange={(date) => handleDateChange(date, false)} />
                 </div>
                 <button className="form--submit">
-                    <img src={icon_search} alt="search" />
+                    <p>Check availability</p>
                 </button>
             </div>
         </div>

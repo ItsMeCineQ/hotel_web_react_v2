@@ -34,3 +34,9 @@
   .other--list ul li a:hover::before{
     width: 100%;
   }
+
+  @media only screen and (max-width: 1050px){
+    .other--list{
+      margin-left: 1rem;
+    }
+  }
