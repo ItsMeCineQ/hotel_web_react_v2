@@ -17,3 +17,13 @@ footer{
     border: 2px solid var(--color-light);
     padding: 0.5rem;
   }
+
+  @media only screen and (max-width: 610px){
+    footer{
+      justify-content: space-around;
+    }
+
+    .footer--logo{
+      position: inherit;
+    }
+  }

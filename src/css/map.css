@@ -92,10 +92,40 @@
     color: var(--color-light);
 }
 
-@media only screen and (max-width: 1050px){
+@media only screen and (max-width: 1200px){
     .map--container{
-        width: 350px;
+        width: 500px;
+        height: 400px;
+        margin-left: 1rem;
+    }
+}
+
+@media only screen and (max-width: 930px){
+    .map--container{
+        width: 400px;
         height: 300px;
         margin-left: 1rem;
+    }
+
+    .map--text{
+        width: 300px;
+    }
+
+    .map--text p{
+        line-height: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 820px){
+    .map{
+        flex-direction: column;
+    }
+
+    .map--text{
+        margin-bottom: 1rem;
+    }
+
+    .map--text h1{
+        text-align: center;
     }
 }
