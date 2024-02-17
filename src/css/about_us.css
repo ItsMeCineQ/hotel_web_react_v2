@@ -59,7 +59,6 @@
     margin-bottom: 0;
   }
 
-
   @media only screen and (max-width: 1300px){
     .about_us--container{
       width: 900px;
@@ -109,5 +108,15 @@
     
     .about_us--content{
       flex-direction: column;
+    }
+  }
+  
+  @media only screen and (max-width: 420px){
+    .about_us--content img{
+      width: 300px;
+    }
+
+    .about_us--content-text{
+      width: 300px;
     }
   }

@@ -41,7 +41,7 @@
   }
   
 .leaflet-popup .leaflet-popup-content-wrapper{
-    background-color: var(--color-dark);
+    background-color: var(--color-black-transparent);
     color: var(--color-light);
     width: 250px;
     height: 130px;
@@ -85,7 +85,7 @@
 }
   
 .leaflet-popup .leaflet-popup-tip{
-    background-color: var(--color-dark);
+    background-color: var(--color-black-transparent);
 }
 
 .leaflet-container a.leaflet-popup-close-button{
@@ -127,5 +127,12 @@
 
     .map--text h1{
         text-align: center;
+    }
+}
+
+@media only screen and (max-width: 420px){
+    .map--container{
+        width: 300px;
+        height: 250px;
     }
 }

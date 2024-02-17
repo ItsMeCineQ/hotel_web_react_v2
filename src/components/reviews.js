@@ -9,17 +9,39 @@ export default function Reviews() {
     const hotelObjects = Object.values(hotels);
 
     const [isExpanded, setExpanded] = useState(false);
+    const [curReview, setCurReview] = useState(false);
     const sectionReviewsRef = useRef(null);
 
      const toggleReviews = () => {
         setExpanded(!isExpanded);
     };
 
+    const nextReview = () => {
+        setCurReview((prevReview) =>
+          prevReview === hotelObjects.length - 1 ? 0 : prevReview + 1
+        );
+      };
+    
+      const previousReview = () => {
+        setCurReview((prevReview) =>
+          prevReview === 0 ? hotelObjects.length - 1 : prevReview - 1
+        );
+      }
+
     useEffect(() => {
         if (!isExpanded) {
           sectionReviewsRef.current.scrollTo({top: 0, behavior: 'smooth'});
         }
       }, [isExpanded]);
+
+      useEffect(() => {
+        if (sectionReviewsRef.current) {
+          sectionReviewsRef.current.scrollTo({
+            left: sectionReviewsRef.current.offsetWidth * curReview,
+            behavior: 'smooth',
+          });
+        }
+      }, [curReview]);
     
     return(
         <div id='reviews' className='reviews section'>
@@ -50,6 +72,8 @@ export default function Reviews() {
                     }
                     return reviewElements;
                 })}
+                <button className='btn--left' onClick={previousReview}></button>
+                <button className='btn--right' onClick={nextReview}></button>
                 <button className={`button--reviews ${isExpanded ? 'button--reviews-expand' : ''}`} onClick={toggleReviews}>
                     <img src={icon_arrow} alt="arrow" className={`icon--arrow ${isExpanded ? 'rotate' : ''}`} />
                 </button>

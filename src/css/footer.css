@@ -27,3 +27,18 @@ footer{
       position: inherit;
     }
   }
+
+  @media only screen and (max-width: 420px){
+    .footer--logo{
+      left: 20px;
+      font-size: 1.5rem;
+      user-select: none;
+      color: var(--color-light);
+      border: 2px solid var(--color-light);
+      padding: 0.5rem;
+    }
+
+    p{
+      font-size: 0.8rem;
+    }
+  }
