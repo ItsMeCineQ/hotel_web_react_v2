@@ -7,7 +7,7 @@ import { hotels } from './hotels.js';
 export default function Reviews() {
 
     const hotelObjects = Object.values(hotels);
-    const reviewElements = [];
+    const reviews = [];
 
     const [isExpanded, setExpanded] = useState(false);
     const [curReview, setCurReview] = useState(false);
@@ -19,13 +19,13 @@ export default function Reviews() {
 
     const nextReview = () => {
         setCurReview((prevReview) =>
-          prevReview === reviewElements.length - 1 ? 0 : prevReview + 1
+          prevReview === reviews.length - 1 ? 0 : prevReview + 1
         );
       };
     
       const previousReview = () => {
         setCurReview((prevReview) =>
-          prevReview === 0 ? reviewElements.length - 1 : prevReview - 1
+          prevReview === 0 ? reviews.length - 1 : prevReview - 1
         );
       }
 
@@ -49,7 +49,7 @@ export default function Reviews() {
            <h1>Check out guests reviews!</h1>
             <div ref={sectionReviewsRef} className={`reviews--container ${isExpanded ? 'reviews--expand' : 'reviews--collapse'}`}>
                 {hotelObjects.map((hotel) => {
-                    // const reviewElements = [];
+                    const reviewElements = [];
                     
                     for (let reviewIndex = 0; reviewIndex < hotel.reviews.reviews_users.length; reviewIndex++) {
                         const elReview = hotel.reviews.reviews_users[reviewIndex];
@@ -70,6 +70,7 @@ export default function Reviews() {
                             </div>
                         );
                         reviewElements.push(reviewElement);
+                        reviews.push(reviewElement);
                     }
                     return reviewElements;
                 })}
