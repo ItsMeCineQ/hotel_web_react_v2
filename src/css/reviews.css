@@ -1,4 +1,5 @@
 .reviews{
+  position: relative;
   width: 900px;
 }
 
@@ -125,14 +126,6 @@
     transform: rotate(90deg);
     width: 30px;
   }
-  
-  .btn--right{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 20px;
-    height: 20px;
-  }
 
   .icon--quote-start{
     align-self: flex-start;
@@ -145,6 +138,11 @@
   
   .icon--quote-right{
     transform: rotate(180deg);
+  }
+
+  .btn--right,
+  .btn--left{
+    display: none;
   }
 
   @media only screen and (max-width: 1000px){
@@ -160,6 +158,7 @@
 
     .reviews--container{
       flex-direction: row;
+      border-radius: 0;
       width: 100%;
       max-height: 250px;
       overflow: auto;
@@ -171,5 +170,23 @@
 
     .button--reviews{
       display: none;
+    }
+
+    .btn--left{
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 40%;
+      width: 20px;
+      height: 20px;
+    }
+
+    .btn--right{
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 40%;
+      width: 20px;
+      height: 20px;
     }
   }

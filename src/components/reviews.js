@@ -7,6 +7,7 @@ import { hotels } from './hotels.js';
 export default function Reviews() {
 
     const hotelObjects = Object.values(hotels);
+    const reviewElements = [];
 
     const [isExpanded, setExpanded] = useState(false);
     const [curReview, setCurReview] = useState(false);
@@ -18,13 +19,13 @@ export default function Reviews() {
 
     const nextReview = () => {
         setCurReview((prevReview) =>
-          prevReview === hotelObjects.length - 1 ? 0 : prevReview + 1
+          prevReview === reviewElements.length - 1 ? 0 : prevReview + 1
         );
       };
     
       const previousReview = () => {
         setCurReview((prevReview) =>
-          prevReview === 0 ? hotelObjects.length - 1 : prevReview - 1
+          prevReview === 0 ? reviewElements.length - 1 : prevReview - 1
         );
       }
 
@@ -48,7 +49,7 @@ export default function Reviews() {
            <h1>Check out guests reviews!</h1>
             <div ref={sectionReviewsRef} className={`reviews--container ${isExpanded ? 'reviews--expand' : 'reviews--collapse'}`}>
                 {hotelObjects.map((hotel) => {
-                    const reviewElements = [];
+                    // const reviewElements = [];
                     
                     for (let reviewIndex = 0; reviewIndex < hotel.reviews.reviews_users.length; reviewIndex++) {
                         const elReview = hotel.reviews.reviews_users[reviewIndex];
@@ -72,12 +73,12 @@ export default function Reviews() {
                     }
                     return reviewElements;
                 })}
-                <button className='btn--left' onClick={previousReview}></button>
-                <button className='btn--right' onClick={nextReview}></button>
                 <button className={`button--reviews ${isExpanded ? 'button--reviews-expand' : ''}`} onClick={toggleReviews}>
                     <img src={icon_arrow} alt="arrow" className={`icon--arrow ${isExpanded ? 'rotate' : ''}`} />
                 </button>
             </div>
+              <button className='btn--left' onClick={previousReview}></button>
+              <button className='btn--right' onClick={nextReview}></button>
         </div>
     )
 }
