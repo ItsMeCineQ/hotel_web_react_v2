@@ -11,23 +11,37 @@ export default function Reviews() {
 
     const [isExpanded, setExpanded] = useState(false);
     const [curReview, setCurReview] = useState(false);
+    const [touchStartX, setTouchStartX] = useState(null);
+    const [touchEndX, setTouchEndX] = useState(null);
     const sectionReviewsRef = useRef(null);
 
      const toggleReviews = () => {
         setExpanded(!isExpanded);
     };
-
-    const nextReview = () => {
-        setCurReview((prevReview) =>
-          prevReview === reviews.length - 1 ? 0 : prevReview + 1
-        );
-      };
     
-      const previousReview = () => {
-        setCurReview((prevReview) =>
-          prevReview === 0 ? reviews.length - 1 : prevReview - 1
-        );
-      }
+      const nextReview = () => {
+        setCurReview((prevReview) => (prevReview === reviews.length - 1 ? prevReview : prevReview + 1));
+    };
+
+    const previousReview = () => {
+        setCurReview((prevReview) => (prevReview === 0 ? prevReview : prevReview - 1));
+    };
+
+    const handleTouchStart = (event) => {
+        setTouchStartX(event.touches[0].clientX);
+    };
+
+    const handleTouchMove = (event) => {
+        setTouchEndX(event.touches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (touchStartX - touchEndX > 50) {
+            nextReview();
+        } else if (touchEndX - touchStartX > 50) {
+            previousReview();
+        }
+    };
 
     useEffect(() => {
         if (!isExpanded) {
@@ -47,7 +61,10 @@ export default function Reviews() {
     return(
         <div id='reviews' className='reviews section'>
            <h1>Check out guests reviews!</h1>
-            <div ref={sectionReviewsRef} className={`reviews--container ${isExpanded ? 'reviews--expand' : 'reviews--collapse'}`}>
+            <div ref={sectionReviewsRef} className={`reviews--container ${isExpanded ? 'reviews--expand' : 'reviews--collapse'}`}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}>
                 {hotelObjects.map((hotel) => {
                     const reviewElements = [];
                     
@@ -78,8 +95,6 @@ export default function Reviews() {
                     <img src={icon_arrow} alt="arrow" className={`icon--arrow ${isExpanded ? 'rotate' : ''}`} />
                 </button>
             </div>
-              <button className='btn--left' onClick={previousReview}></button>
-              <button className='btn--right' onClick={nextReview}></button>
         </div>
     )
 }
