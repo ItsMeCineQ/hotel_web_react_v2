@@ -152,41 +152,33 @@
   }
   @media only screen and (max-width: 610px){
     .reviews{
-      width: 90%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       overflow: auto;
     }
 
     .reviews--container{
       flex-direction: row;
       border-radius: 0;
-      width: 100%;
+      width: 90%;
       max-height: 250px;
       overflow: hidden;
+      box-shadow: none;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      gap: 0;
     }
 
     .reviews--review{
-      min-width: 400px;
+      min-width: 100%;
+      padding: 1rem 0;
+      margin: auto;
+      box-shadow: none;
     }
 
     .button--reviews{
       display: none;
-    }
-
-    .btn--left{
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 40%;
-      width: 20px;
-      height: 20px;
-    }
-
-    .btn--right{
-      display: block;
-      position: absolute;
-      right: 0;
-      top: 40%;
-      width: 20px;
-      height: 20px;
     }
   }
