@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/hotel_web_react_v2/static/css/main.dff77166.css",
+    "main.css": "/hotel_web_react_v2/static/css/main.06292ca5.css",
     "main.js": "/hotel_web_react_v2/static/js/main.ebf05cd3.js",
     "static/media/slider_hotel4.jpg": "/hotel_web_react_v2/static/media/slider_hotel4.df96a62a2587e1c0c10a.jpg",
     "static/media/slider_hotel6.jpg": "/hotel_web_react_v2/static/media/slider_hotel6.e1efa126db6aa7879d02.jpg",
@@ -16,11 +16,11 @@
     "static/media/about_us_img-1.jpeg": "/hotel_web_react_v2/static/media/about_us_img-1.06975541fd76568bf388.jpeg",
     "static/media/spa_image3.jpg": "/hotel_web_react_v2/static/media/spa_image3.9f59857bda4f57b8544c.jpg",
     "index.html": "/hotel_web_react_v2/index.html",
-    "main.dff77166.css.map": "/hotel_web_react_v2/static/css/main.dff77166.css.map",
+    "main.06292ca5.css.map": "/hotel_web_react_v2/static/css/main.06292ca5.css.map",
     "main.ebf05cd3.js.map": "/hotel_web_react_v2/static/js/main.ebf05cd3.js.map"
   },
   "entrypoints": [
-    "static/css/main.dff77166.css",
+    "static/css/main.06292ca5.css",
     "static/js/main.ebf05cd3.js"
   ]
 }
