@@ -66,7 +66,7 @@ header{
     width: 100%;
   }
 
-  .btn_nav--menu-close{
+  .btn_nav--menu-close-active{
     display: none;
   }
   
@@ -105,10 +105,6 @@ header{
     .nav--links-active{
       transform: translate(0);
       transition: 0.3s ease-in;
-    }
-    
-    .btn_nav--menu-close{
-      display: none;
     }
   }
 
