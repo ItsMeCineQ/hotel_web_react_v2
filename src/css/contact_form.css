@@ -1,7 +1,9 @@
 .contact--form{
     position: fixed;
-    bottom: 10%;
-    left: 38%;
+    bottom: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
     width: 400px;
     display: flex;
     justify-content: center;
@@ -164,4 +166,25 @@
 
   .hidden{
     display: none;
+  }
+
+  @media only screen and (max-width: 500px){
+    .contact--form{
+      width: 300px;
+    }
+  }
+
+  @media only screen and (max-width: 370px){
+    .contact--form{
+      padding: 1rem;
+      width: 250px;
+    }
+
+    .form--contact{
+      width: 200px;
+    }
+
+    .form--contact .form--contact-message{
+      width: 184px;
+    }
   }
