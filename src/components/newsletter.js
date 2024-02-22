@@ -95,6 +95,7 @@ export default function Newsletter() {
                 <button onClick={openConfirmationModal} className="button_newsletter--submit"><img src={icon_mail}></img></button>
                 <button onClick={closeNewsletter} className="button_newsletter--close"><img src={icon_close}></img></button>
                 {error && <p className="newsletter--error">{error}</p>}
+            </div>
                 <div className={`newsletter--confirm ${isConfirmationVisible ? '' : 'hidden'}`}>
                     <h2>
                         Confirm sending the form
@@ -124,7 +125,6 @@ export default function Newsletter() {
                         <img src={icon_positive}></img>
                     </div>
                 </div>
-            </div>
         </div>
     )
 }
