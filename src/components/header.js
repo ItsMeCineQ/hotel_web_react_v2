@@ -10,7 +10,7 @@ const Header = function () {
 
   const openMenu = () => {
     if(menu){
-      menu.classList.add('nav--links-active');
+      menu.classList.toggle('nav--links-active');
     }
     setButtonCloseVisible(true);
   }

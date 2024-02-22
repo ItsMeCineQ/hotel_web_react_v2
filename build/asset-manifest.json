@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/hotel_web_react_v2/static/css/main.dff77166.css",
+    "main.js": "/hotel_web_react_v2/static/js/main.ebf05cd3.js",
+    "static/media/slider_hotel4.jpg": "/hotel_web_react_v2/static/media/slider_hotel4.df96a62a2587e1c0c10a.jpg",
+    "static/media/slider_hotel6.jpg": "/hotel_web_react_v2/static/media/slider_hotel6.e1efa126db6aa7879d02.jpg",
+    "static/media/slider_hotel7.jpg": "/hotel_web_react_v2/static/media/slider_hotel7.af8d1bd568938f18bff9.jpg",
+    "static/media/about_us_img-5.jpg": "/hotel_web_react_v2/static/media/about_us_img-5.c9f005eaa27d2ed0659e.jpg",
+    "static/media/image_restaurant.jpg": "/hotel_web_react_v2/static/media/image_restaurant.f19d2c568acc34db52cb.jpg",
+    "static/media/about_us_img-2.jpg": "/hotel_web_react_v2/static/media/about_us_img-2.d836615409f4f596c603.jpg",
+    "static/media/about_us_img-4.jpg": "/hotel_web_react_v2/static/media/about_us_img-4.f415b1e8e15df080c34e.jpg",
+    "static/media/hotel.jpg": "/hotel_web_react_v2/static/media/hotel.9f575807e90e6b925ab3.jpg",
+    "static/media/spa_image2.jpg": "/hotel_web_react_v2/static/media/spa_image2.b6422eda59f8a634c2d3.jpg",
+    "static/media/slider_hotel3.jpg": "/hotel_web_react_v2/static/media/slider_hotel3.e680ecd7438291fcf61a.jpg",
+    "static/media/slider_hotel5.jpeg": "/hotel_web_react_v2/static/media/slider_hotel5.71c513c12d492f8e1c0f.jpeg",
+    "static/media/about_us_img-1.jpeg": "/hotel_web_react_v2/static/media/about_us_img-1.06975541fd76568bf388.jpeg",
+    "static/media/spa_image3.jpg": "/hotel_web_react_v2/static/media/spa_image3.9f59857bda4f57b8544c.jpg",
+    "index.html": "/hotel_web_react_v2/index.html",
+    "main.dff77166.css.map": "/hotel_web_react_v2/static/css/main.dff77166.css.map",
+    "main.ebf05cd3.js.map": "/hotel_web_react_v2/static/js/main.ebf05cd3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dff77166.css",
+    "static/js/main.ebf05cd3.js"
+  ]
+}

@@ -69,6 +69,10 @@ header{
   .btn_nav--menu-close{
     display: none;
   }
+
+  .btn_nav--menu-close-active{
+    display: none;
+  }
   
   .scrolled{
     background-color: #000000ea;
@@ -105,10 +109,6 @@ header{
     .nav--links-active{
       transform: translate(0);
       transition: 0.3s ease-in;
-    }
-    
-    .btn_nav--menu-close{
-      display: none;
     }
   }
 
