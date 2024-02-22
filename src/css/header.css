@@ -106,6 +106,10 @@ header{
       transform: translate(0);
       transition: 0.3s ease-in;
     }
+    
+    .btn_nav--menu-close{
+      display: none;
+    }
   }
 
   @media only screen and (max-width: 610px){
