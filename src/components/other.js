@@ -12,7 +12,7 @@ export default function Other() {
     }
 
     return(
-        <div className="other--list">
+        <div id='other' className="other--list">
             <ul>
                 <li><a>Regulations</a></li>
                 <li><a>More</a></li>

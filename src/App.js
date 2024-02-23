@@ -49,7 +49,7 @@ export default function App() {
         <Restaurant />
         <Reviews />
       </div>
-      <div className='essentials'>
+      <div className='essentials' id='other'>
         <Contact />
         <ContactForm />
         <Other />

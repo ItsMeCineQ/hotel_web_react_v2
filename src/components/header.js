@@ -6,17 +6,21 @@ import icon_close from '../img/icon_close.png'
 const Header = function () {
 
   const [isButtonCloseVisible, setButtonCloseVisible] = useState(false);
+  const [isNavMenuVisible, setNavMenuVisible] = useState(false);
   const menu = document.querySelector('.nav--links');
 
   const openMenu = () => {
     if(menu){
       menu.classList.toggle('nav--links-active');
+      setNavMenuVisible(true);
     }
     setButtonCloseVisible(true);
   }
 
   const closeMenu = () => {
-    menu.classList.remove('nav--links-active');
+    if(isNavMenuVisible){
+      menu.classList.remove('nav--links-active');
+    }
     setButtonCloseVisible(false);
   }
 
@@ -75,7 +79,7 @@ const Header = function () {
                         <li><a className="nav--link" href="#spa">Relax</a></li>
                         <li><a className="nav--link" href="#restaurant">Restaurant</a></li>
                         <li><a className="nav--link" href="#reviews">Reviews</a></li>
-                        <li><a className="nav--link" href="#contact">Contact</a></li>
+                        <li><a className="nav--link" href="#other">Contact</a></li>
                     </ul>
                 </div>
             </div>
