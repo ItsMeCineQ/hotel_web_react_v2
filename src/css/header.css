@@ -73,11 +73,13 @@ header{
   .btn_nav--menu-close-active{
     display: none;
   }
-  
+
   .scrolled{
     background-color: #000000ea;
     transition: all 0.3s;
   }
+
+  
 
   @media only screen and (max-width: 1000px) {
 
@@ -163,4 +165,9 @@ header{
       width: 100%;
       height: 100%;
     }
+    
+    .no--scroll{
+      overflow: hidden;
+    }
+    
   }

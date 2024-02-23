@@ -12,9 +12,11 @@ const Header = function () {
   const openMenu = () => {
     if(menu){
       menu.classList.toggle('nav--links-active');
-      setNavMenuVisible(true);
     }
     setButtonCloseVisible(true);
+    setNavMenuVisible(true);    
+    document.body.classList.add('no--scroll');
+
   }
 
   const closeMenu = () => {
@@ -22,6 +24,8 @@ const Header = function () {
       menu.classList.remove('nav--links-active');
     }
     setButtonCloseVisible(false);
+    setNavMenuVisible(false);
+    document.body.classList.remove('no--scroll');
   }
 
     useEffect(() => {
@@ -79,7 +83,7 @@ const Header = function () {
                         <li><a className="nav--link" href="#spa">Relax</a></li>
                         <li><a className="nav--link" href="#restaurant">Restaurant</a></li>
                         <li><a className="nav--link" href="#reviews">Reviews</a></li>
-                        <li><a className="nav--link" href="#other">Contact</a></li>
+                        <li><a className="nav--link" href="#footer">Contact</a></li>
                     </ul>
                 </div>
             </div>

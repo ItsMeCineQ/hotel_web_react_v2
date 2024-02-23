@@ -9,7 +9,7 @@ export default function Footer() {
         });
     }
     return(
-        <footer>
+        <footer id='footer'>
             <h2 className="footer--logo" onClick={scrollToNav}>Hotel.ly</h2>
             <p>All rights reserved ©️2023</p>
         </footer>
