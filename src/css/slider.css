@@ -75,3 +75,16 @@
     object-fit: cover;
     transition: opacity 0.5 ease;
   }
+
+  @media only screen and (max-width: 610px){
+    .button--arrow{
+      width: 100px;
+    }
+    .slider--container .button--arrow-left img{
+      height: 50px;
+    }
+    
+    .slider--container .button--arrow-right img{
+      height: 50px;
+    }
+  }
